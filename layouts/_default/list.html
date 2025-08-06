@@ -1,0 +1,20 @@
+{{ define "main" }}
+{{ if .IsHome }}
+<div class="hero">
+    <h1>Velkommen til Norsemen Gaming</h1>
+    <p>Hvor vikingene møter pikslene - norsk gaming på sitt beste!</p>
+</div>
+{{ end }}
+
+<div class="content-grid">
+    <h2>{{ .Title }}</h2>
+    <div class="post-list">
+        {{ range .Pages }}
+        <div class="post-card">
+            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+            <p class="date">{{ .Date.Format "2. January 2006" }}</p>
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html lang="no">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> - My New Hugo Site</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid #00ff88;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #00ff88;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+            text-decoration: none;
+        }
+        
+        .logo:hover {
+            color: #ffffff;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            background: linear-gradient(45deg, #00ff88, #00cc6a);
+            color: #000000;
+            box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+        }
+        
+        main {
+            padding: 2rem 0;
+            min-height: calc(100vh - 200px);
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%2300ff88" opacity="0.1"/><circle cx="80" cy="80" r="1.5" fill="%2300ff88" opacity="0.15"/><circle cx="40" cy="60" r="1" fill="%2300ff88" opacity="0.1"/><circle cx="90" cy="20" r="1" fill="%2300ff88" opacity="0.1"/><circle cx="10" cy="90" r="1.5" fill="%2300ff88" opacity="0.1"/></svg>');
+            margin-bottom: 2rem;
+            border-radius: 10px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #00ff88;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: #cccccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .content-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        article {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.1);
+            border-color: #00ff88;
+        }
+        
+        article h1, article h2, article h3 {
+            color: #00ff88;
+            margin-bottom: 1rem;
+        }
+        
+        article h1 {
+            font-size: 2.5rem;
+            border-bottom: 2px solid #00ff88;
+            padding-bottom: 0.5rem;
+        }
+        
+        .post-meta {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .post-meta::before {
+            content: "🎮";
+            font-size: 1.2rem;
+        }
+        
+        .post-list {
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .post-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .post-card:hover {
+            transform: translateX(10px);
+            border-color: #00ff88;
+            box-shadow: -5px 0 15px rgba(0, 255, 136, 0.2);
+        }
+        
+        .post-card h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .post-card h3 a {
+            color: #00ff88;
+            text-decoration: none;
+            font-size: 1.3rem;
+        }
+        
+        .post-card h3 a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
+        }
+        
+        .post-card .date {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 2px solid #00ff88;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            color: #888;
+        }
+        
+        .footer-content a {
+            color: #00ff88;
+            text-decoration: none;
+        }
+        
+        .footer-content a:hover {
+            color: #ffffff;
+        }
+        
+         
+        .glitch {
+            position: relative;
+        }
+        
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch::before {
+            animation: glitch-anim 2s infinite linear alternate-reverse;
+            color: #ff0040;
+            z-index: -1;
+        }
+        
+        .glitch::after {
+            animation: glitch-anim2 1s infinite linear alternate-reverse;
+            color: #00ffff;
+            z-index: -2;
+        }
+        
+        @keyframes glitch-anim {
+            0% { clip: rect(42px, 9999px, 44px, 0); }
+            25% { clip: rect(12px, 9999px, 59px, 0); }
+            50% { clip: rect(25px, 9999px, 33px, 0); }
+            75% { clip: rect(51px, 9999px, 76px, 0); }
+            100% { clip: rect(8px, 9999px, 91px, 0); }
+        }
+        
+        @keyframes glitch-anim2 {
+            0% { clip: rect(65px, 9999px, 119px, 0); }
+            25% { clip: rect(52px, 9999px, 74px, 0); }
+            50% { clip: rect(79px, 9999px, 85px, 0); }
+            75% { clip: rect(67px, 9999px, 98px, 0); }
+            100% { clip: rect(15px, 9999px, 45px, 0); }
+        }
+        
+         
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            article {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo glitch" data-text="⚔️ NORSEMEN GAMING">⚔️ NORSEMEN GAMING</a>
+                <nav>
+                    <ul>
+                        <li><a href="/">🏠 Home</a></li>
+                        <li><a href="/posts/">📝 Posts</a></li>
+                        <li><a href="/about/">ℹ️ About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            
+<article>
+    <h1></h1>
+    <div class="post-meta">
+        <span>1. January 0001</span>
+    </div>
+    <div class="content">
+        <h2 id="description-lær-mer-om-teamet-bak-norsemen-gaming-og-vår-misjon-om-å-skape-det-beste-norske-gaming-innholdet">title: &ldquo;Om Norsemen Gaming - Vikingene bak pikslene&rdquo;
+date: 2025-08-06T10:00:00+02:00
+draft: false
+description: &ldquo;Lær mer om teamet bak Norsemen Gaming og vår misjon om å skape det beste norske gaming-innholdet&rdquo;</h2>
+<h1 id="om-norsemen-gaming-">Om Norsemen Gaming ⚔️</h1>
+<p><strong>Skål og velkommen til vårt longhouse, gaming-kriger!</strong></p>
+<p>Vi er <strong>Norsemen Gaming</strong> - en samling av lidenskapelige norske gamere som har bestemt oss for å erobre den digitale verdenen med våre tastaturer og mus som våre sverd og skjold.</p>
+<h2 id="vår-historie-">Vår historie 🏰</h2>
+<p>Alt startet i en kald vinternatt i Bergen (selvfølgelig), da vi ble ferdig med enda en episk gaming-sesjon og tenkte: &ldquo;Faen, vi burde dele denne lidenskapen med flere nordmenn!&rdquo;</p>
+<p>Fra den første LAN-party i kjelleren til Olav i 2003, til dagens moderne gaming-setup - vi har vært med på reisen hele veien. Vi har sett gaming utvikle seg fra enkle 8-bit eventyr til de cinematiske mesterverk vi har i dag.</p>
+<h2 id="hvem-er-vi-">Hvem er vi? 👥</h2>
+<p><strong>Bjørn &ldquo;TheViking&rdquo; Eriksen</strong> - <em>Grunnlegger &amp; Redaktør</em><br>
+Gaming siden Commodore 64-æraen. Spesialiserer seg på RPG-er og strategi. Kan fremdeles huske alle kodene til Contra på Nintendo. Har brukt mer på gaming-gear enn på bil (og angrer ikke).</p>
+<p><strong>Astrid &ldquo;NorthernLight&rdquo; Hansen</strong> - <em>Anmelder &amp; Horror-ekspert</em><br>
+Vår fryktløse horror-gaming ekspert som spiller alt fra Resident Evil til Phasmophobia uten å blunke. Også vår resident indie-game scout som finner de skjulte perlene før alle andre.</p>
+<p><strong>Magnus &ldquo;RaidLeader&rdquo; Olsen</strong> - <em>Multiplayer &amp; E-sport</em><br>
+Tidligere semi-pro Counter-Strike spiller. Nå leder han raids i WoW og dominerer i Valorant. Kan forklare enhver gaming-meta på 5 minutter eller mindre.</p>
+<p><strong>Solveig &ldquo;RetroQueen&rdquo; Johnsen</strong> - <em>Retro-gaming &amp; Gaming-historie</em><br>
+Samler på vintage gaming-gear og vet alt om gaming-historie. Eier fremdeles en fungerende Atari 2600 og alle Nintendo-konsoller siden NES.</p>
+<h2 id="vår-misjon-">Vår misjon 🎯</h2>
+<p>Vi eksisterer for å:</p>
+<p><strong>🎮 Levere ærlige anmeldelser</strong><br>
+Ingen sponset bullshit. Vi kjøper spillene selv og gir deg vår ærlige mening - selv om det gjør utviklerne sinte.</p>
+<p><strong>⚡ Holde deg oppdatert</strong><br>
+Fra de største AAA-utgivelsene til små indie-perler som fortjener oppmerksomhet.</p>
+<p><strong>🛡️ Bygge community</strong><br>
+Gaming er bedre sammen. Vi vil skape et sted hvor norske gamere kan diskutere, dele tips og finne nye gaming-venner.</p>
+<p><strong>🔥 Feire gaming-kulturen</strong><br>
+Gaming er ikke bare en hobby - det er kultur, kunst og teknologi kombinert til noe magisk.</p>
+<h2 id="vår-filosofi-">Vår filosofi 💭</h2>
+<p><strong>&ldquo;For hver nordmann som oppdager gaming-glede, vinner vi en liten seier mot kjedsomhet.&rdquo;</strong></p>
+<p>Vi tror på:</p>
+<ul>
+<li><strong>Ærlighet over popularitet</strong> - Vi sier det som det er</li>
+<li><strong>Kvalitet over kvantitet</strong> - Hellere færre, men bedre anmeldelser</li>
+<li><strong>Inkludering over elitisme</strong> - Gaming er for alle, uansett nivå</li>
+<li><strong>Humor over seriøsitet</strong> - Vi tar gaming seriøst, men ikke oss selv</li>
+</ul>
+<h2 id="vårt-gaming-setup-">Vårt gaming-setup 🖥️</h2>
+<p>Siden vi vet at alle gamere er nysgjerrige på hverandres setup:</p>
+<p><strong>Hardware:</strong></p>
+<ul>
+<li>RTX 4080 Super (oppgradert fra 3080 i fjor)</li>
+<li>AMD Ryzen 7 7800X3D</li>
+<li>32GB DDR5 RAM</li>
+<li>Samsung 980 Pro 2TB NVMe</li>
+<li>LG 27&quot; 4K 144Hz monitor (+ sekundærskjerm for chat)</li>
+</ul>
+<p><strong>Perifert:</strong></p>
+<ul>
+<li>SteelSeries Apex Pro TKL (Nordic layout, selvfølgelig)</li>
+<li>Logitech G Pro X Superlight</li>
+<li>SteelSeries Arctis 7P+ headset</li>
+<li>Blue Yeti mikrofon for streaming</li>
+</ul>
+<h2 id="hvorfor-nettopp-norsemen-gaming-">Hvorfor nettopp &ldquo;Norsemen Gaming&rdquo;? 🇳🇴</h2>
+<p>Fordi vi er stolte av våre røtter! Vikingene var oppdagere, innovatører og strategiske krigere. I gaming-verdenen fortsetter vi den tradisjonen - vi utforsker nye spill-verdener, omfavner ny teknologi, og kjemper episke kamper (digitale, da).</p>
+<p>Plus, &ldquo;Norsemen Gaming&rdquo; låter mye kulere enn &ldquo;Bergen Gaming Blog&rdquo;, ikke sant?</p>
+<h2 id="kontakt-oss-">Kontakt oss 📧</h2>
+<p><strong>Vil du:</strong></p>
+<ul>
+<li>Foreslå spill vi bør anmelde?</li>
+<li>Diskutere gaming-trender?</li>
+<li>Invitere oss til gaming-events?</li>
+<li>Bare slå av en prat om gaming?</li>
+</ul>
+<p><strong>Send oss en melding:</strong></p>
+<ul>
+<li>Email: <a href="mailto:kontakt@norsemengaming.no">kontakt@norsemengaming.no</a></li>
+<li>Discord: NorsemenGaming#1337</li>
+<li>Twitter: @NorsemenGaming</li>
+</ul>
+<h2 id="takk-til-våre-lesere-">Takk til våre lesere 🙏</h2>
+<p>Uten dere ville vi bare vært fire nordmenn som sitter i kjelleren og prater høyt til oss selv om spill. Takk for at dere leser, kommenterer, diskuterer og deler vår lidenskap for gaming!</p>
+<p><strong>Så ta deg en øl (eller kaffe), sett deg godt til rette, og bli med oss på dette episke gaming-eventyret!</strong></p>
+<hr>
+<p><em>&ldquo;I Odin we trust, in gaming we game.&rdquo;</em> ⚡<br>
+<strong>- Norsemen Gaming mottoet</strong></p>
+<p><strong>Skål og god gaming! 🍻🎮</strong></p>
+
+    </div>
+</article>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Norsemen Gaming | For Odin og for gaming! ⚡</p>
+                <p>Powered by <a href="https://gohugo.io">Hugo</a> & nordisk gaming-lidenskap 🎮</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
