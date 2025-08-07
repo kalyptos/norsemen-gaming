@@ -13,10 +13,14 @@
             {{ .Date.Format "2. January 2006" }}
           </div>
 
+          {{ with .Summary }}
+            <p>{{ . }}</p>
+          {{ end }}
+
           {{ with .Params.tags }}
-            <div class="post-tags">
+            <div class="post-tags" style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem;">
               {{ range . }}
-                <span class="tag">{{ . }}</span>
+                <span class="tag">#{{ . }}</span>
               {{ end }}
             </div>
           {{ end }}
@@ -24,7 +28,6 @@
       {{ end }}
     </div>
 
-    <!-- Paginering -->
     {{ if gt .Paginator.TotalPages 1 }}
       <div class="pagination">
         {{ if .Paginator.HasPrev }}
@@ -35,7 +38,6 @@
         {{ end }}
       </div>
     {{ end }}
-
   {{ else }}
     <p>Ingen innlegg funnet.</p>
   {{ end }}
