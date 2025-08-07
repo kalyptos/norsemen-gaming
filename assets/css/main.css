@@ -191,3 +191,19 @@ img {
 .post-meta span + span {
   margin-left: 0.5rem;
 }
+
+.read-more {
+  margin-top: auto;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--accent);
+  color: #000;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.read-more:hover {
+  background-color: var(--accent-hover);
+}

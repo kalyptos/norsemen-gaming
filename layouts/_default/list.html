@@ -1,8 +1,9 @@
 {{ define "main" }}
   {{ if .Paginator.Pages }}
     <div class="post-grid">
-      {{ range where .Paginator.Pages "Type" "post" }}
+      {{ range .Paginator.Pages }}
         <div class="post-card">
+
           {{ with .Params.featured_image }}
             <img src="{{ . | relURL }}" alt="{{ $.Title | default "Post image" }}">
           {{ end }}
@@ -10,20 +11,19 @@
           <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
 
           <div class="post-meta">
-            {{ .Date.Format "2. January 2006" }}
+            {{ .Date.Format "2. January 2006 kl. 15:04" }}
+            {{ with .Params.author }} | Skrevet av {{ . }}{{ end }}
           </div>
 
-          {{ with .Summary }}
-            <p>{{ . }}</p>
-          {{ end }}
+          <div class="post-meta">
+            {{ with .Params.status }}<strong>Status:</strong> {{ . }}<br>{{ end }}
+            {{ with .Params.utvikler }}<strong>Utvikler:</strong> {{ . }}<br>{{ end }}
+            {{ with .Params.plattform }}<strong>Plattform:</strong> {{ . }}<br>{{ end }}
+            {{ with .Params.crowdfunding }}<strong>Crowdfunding:</strong> {{ . }} 💰<br>{{ end }}
+          </div>
 
-          {{ with .Params.tags }}
-            <div class="post-tags" style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem;">
-              {{ range . }}
-                <span class="tag">#{{ . }}</span>
-              {{ end }}
-            </div>
-          {{ end }}
+          <a href="{{ .RelPermalink }}" class="read-more">Les mer →</a>
+
         </div>
       {{ end }}
     </div>
@@ -38,6 +38,7 @@
         {{ end }}
       </div>
     {{ end }}
+
   {{ else }}
     <p>Ingen innlegg funnet.</p>
   {{ end }}
