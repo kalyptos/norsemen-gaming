@@ -7,7 +7,7 @@ type: "post"
 description: "Fra skaperne av Black Desert kommer Crimson Desert - et open-world action-RPG som lover å revolusjonere sjangeren"
 tags: ["crimson-desert", "pearl-abyss", "action-rpg", "open-world", "2025"]
 categories: ["Action-RPG", "Kommende-spill"]
-featured_image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800"
+featured_image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3321460/ss_58f1d5e4836506166313ec2108a4c191e8f65903.1920x1080.jpg"
 ---
 
 **Release:** Q4 2025  
