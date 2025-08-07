@@ -3,6 +3,7 @@ title: "Borderlands 4 - Pandora kaller oss tilbake"
 date: 2025-07-31T14:20:00+02:00  
 draft: false
 author: "Treorian"
+type: "post"
 description: "Gearbox er tilbake med Borderlands 4! Etter Borderlands 3's mixed reception, kan serien gjenvinne sin magi?"
 tags: ["borderlands-4", "gearbox", "looter-shooter", "coop", "pandora"]
 categories: ["FPS", "Looter-Shooter"]

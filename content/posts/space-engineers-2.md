@@ -3,6 +3,7 @@ title: "Space Engineers 2 - Keen Software bygger videre på suksessen"
 date: 2025-08-02T15:30:00+02:00
 draft: false
 author: "Treorian"
+type: "post"
 description: "Space Engineers får en sequel! Kan Keen Software House toppe det originale engineering-mesterverket?"
 tags: ["space-engineers-2", "keen-software", "engineering", "sandbox", "space-sim"]
 categories: ["Simulation", "Sandbox"]

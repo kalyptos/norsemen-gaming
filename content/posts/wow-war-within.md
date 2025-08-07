@@ -3,6 +3,7 @@ title: "World of Warcraft: The War Within - Azeroth under angrep"
 date: 2025-08-04T11:45:00+02:00
 draft: false
 author: "Treorian"
+type: "post"
 description: "WoW's nyeste expansion tar oss under jorden i The War Within. Er dette expansionen som redder World of Warcraft?"
 tags: ["world-of-warcraft", "wow", "the-war-within", "mmorpg", "blizzard"]
 categories: ["MMORPG", "Expansion"]

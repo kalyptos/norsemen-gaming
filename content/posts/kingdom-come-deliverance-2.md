@@ -3,6 +3,7 @@ title: "Kingdom Come: Deliverance 2 - Middelalder-RPG får oppfølger"
 date: 2025-08-04T16:45:00+02:00  
 draft: false
 author: "Treorian"
+type: "post"
 description: "Henry er tilbake i den mest realistiske middelalder-simulatoren noensinne. Kingdom Come: Deliverance 2 lover enda mer autentisk RPG-action."
 tags: ["kingdom-come", "rpg", "middelalder", "warhorse", "realisme"]
 categories: ["RPG", "Kommende-spill"]

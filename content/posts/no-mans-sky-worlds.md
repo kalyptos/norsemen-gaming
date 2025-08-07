@@ -3,6 +3,7 @@ title: "No Man's Sky: Worlds Update - Universet blir enda større"
 date: 2025-08-03T09:15:00+02:00
 draft: false
 author: "Treorian"
+type: "post"
 description: "Hello Games fortsetter å levere gratis content til No Man's Sky med Worlds update. Hva er nytt i det uendelige universet?"
 tags: ["no-mans-sky", "worlds-update", "space-exploration", "hello-games", "free-dlc"]
 categories: ["Space-sim", "Updates"]
