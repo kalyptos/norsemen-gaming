@@ -9,6 +9,6 @@
 
   <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
 
-  {{ $css := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
-  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  {{ $styles := resources.Match "css/*.css" | resources.Concat "css/bundle.css" | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
 </head>
