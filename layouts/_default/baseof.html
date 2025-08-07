@@ -3,6 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
     <style>
         * {
@@ -12,7 +15,7 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Rajdhani', 'Inter', sans-serif;
             background: linear-gradient(135deg, #1C1C1C 0%, #2A2A2A 50%, #1C1C1C 100%);
             color: #F5E8D8;
             min-height: 100vh;
@@ -43,7 +46,8 @@
         }
         
         .logo {
-            font-size: 2rem;
+            font-family: 'Orbitron', monospace;
+            font-size: 900;
             font-weight: bold;
             color: #DAA520;
             text-shadow: 0 0 10px rgba(218, 165, 32, 0.5);
@@ -62,6 +66,8 @@
         }
         
         nav a {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
             color: #F5E8D8;
             text-decoration: none;
             padding: 0.5rem 1rem;
@@ -72,6 +78,8 @@
         }
         
         nav a:hover {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
             background: linear-gradient(45deg, #FF6F61, #FF4500);
             color: #1C1C1C;
             box-shadow: 0 4px 15px rgba(255, 111, 97, 0.3);
@@ -128,6 +136,8 @@
         }
         
         article h1, article h2, article h3 {
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
             color: #DAA520;
             margin-bottom: 1rem;
         }
