@@ -10,7 +10,7 @@
 
   <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
 
-  {{ $style := resources.Match "css/main.css" | resources.Concat "styles.css" | resources.Minify | resources.Fingerprint }}
+  {{ $style := resources.Match "css/main.css" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 </head>
 <body>
