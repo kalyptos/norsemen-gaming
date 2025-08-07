@@ -1,4 +1,4 @@
-baseURL = 'https://venerable-salmiakki-17c377.netlify.app'  # Oppdater med din faktiske Netlify URL
+baseURL = 'https://norsemen.ovh'  # Oppdater med din faktiske Netlify URL
 languageCode = 'no'
 title = 'Norsemen Gaming'
 
