@@ -120,7 +120,7 @@ img {
   margin-bottom: 1rem;
 }
 
-.post-list {
+.post-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
@@ -165,4 +165,28 @@ img {
   border-radius: 4px;
   font-size: 0.75rem;
   align-self: flex-start;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.pagination a {
+  padding: 0.5rem 1rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.pagination a:hover {
+  background-color: var(--accent);
+  color: #000;
+}
+
+.post-meta span + span {
+  margin-left: 0.5rem;
 }

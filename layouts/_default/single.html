@@ -2,22 +2,22 @@
 <article>
 
   {{ if .Params.featured_image }}
-    <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="post-image">
+    <img src="{{ .Params.featured_image | relURL }}" alt="{{ .Title }}" class="post-image">
   {{ end }}
 
   <h1>{{ .Title }}</h1>
 
   <div class="post-meta">
     <span>{{ .Date.Format "2. January 2006 kl. 15:04" }}</span>
-    {{ with .Params.author }}<span>Skrevet av {{ . }}</span>{{ end }}
+    {{ with .Params.author }}&nbsp;|&nbsp;<span>Skrevet av {{ . }}</span>{{ end }}
   </div>
 
   {{ with .Params.tags }}
-  <div class="post-tags">
-    {{ range . }}
-      <span class="tag">#{{ . }}</span>
-    {{ end }}
-  </div>
+    <div class="post-tags">
+      {{ range . }}
+        <span class="tag">#{{ . }}</span>
+      {{ end }}
+    </div>
   {{ end }}
 
   <div class="content">

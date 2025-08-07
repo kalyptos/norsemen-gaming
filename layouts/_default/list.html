@@ -1,107 +1,42 @@
 {{ define "main" }}
-{{ if .IsHome }}
-<div class="hero">
-  <h1>Velkommen til Norsemen Gaming</h1>
-  <p>Hvor vikingene møter pikslene - norsk gaming på sitt beste!</p>
-</div>
+  {{ if .Paginator.Pages }}
+    <div class="post-grid">
+      {{ range .Paginator.Pages }}
+        <div class="post-card">
+          {{ with .Params.featured_image }}
+            <img src="{{ . | relURL }}" alt="{{ $.Title | default "Post image" }}">
+          {{ end }}
 
-<div class="content-grid">
-  <h2>🎮 Nyeste Gaming-poster</h2>
-  <div class="post-list">
-    {{ range first 6 (sort (where .Site.RegularPages "Section" "posts") "Date" "desc") }}
-    <div class="post-card">
-      {{ if .Params.featured_image }}
-        <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="post-image">
-        <div class="post-overlay">NYE SPILL</div>
-      {{ else }}
-        <div class="fallback-image">
-          <span class="fallback-icon">🎮</span>
-        </div>
-      {{ end }}
-      <div class="post-content">
-        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-        <p class="date">
-          {{ .Date.Format "2. January 2006 kl. 15:04" }}
-          {{ with .Params.author }} &middot; Skrevet av {{ . }}{{ end }}
-        </p>
-        {{ if and .Summary (ne .Summary .Title) }}
-          <p class="summary">{{ .Summary | truncate 120 }}</p>
-        {{ end }}
-      </div>
-    </div>
-    {{ end }}
-  </div>
+          <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
 
-  <div class="centered-button">
-    <a href="/posts/" class="button-link">
-      ⚔️ Se alle gaming-poster →
-    </a>
-  </div>
-</div>
+          <div class="post-meta">
+            {{ .Date.Format "2. January 2006" }}
+          </div>
 
-{{ else }}
-<!-- Alle posts eller kategorier -->
-<div class="content-grid">
-  <h2>{{ if eq .Section "posts" }}🎮 Alle Gaming-poster{{ else }}{{ .Title }}{{ end }}</h2>
-
-  {{ if eq .Section "posts" }}
-  <p class="section-description">
-    Utforsk alle våre gaming-anmeldelser, nyheter og artikler sortert etter nyeste først!
-  </p>
-  {{ end }}
-
-  <div class="post-list">
-    {{ range sort .Pages "Date" "desc" }}
-    <div class="post-card">
-      {{ if .Params.featured_image }}
-        <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="post-image">
-        {{ if eq .Section "posts" }}
-        <div class="post-overlay">
           {{ with .Params.tags }}
-            {{ if in . "kommende-spill" }}KOMMER SNART
-            {{ else if in . "anmeldelser" }}ANMELDELSE
-            {{ else if in . "nyheter" }}NYHETER
-            {{ else }}GAMING{{ end }}
-          {{ else }}
-            GAMING
+            <div class="post-tags">
+              {{ range . }}
+                <span class="tag">{{ . }}</span>
+              {{ end }}
+            </div>
           {{ end }}
-        </div>
-        {{ end }}
-      {{ else }}
-        <div class="fallback-image">
-          <span class="fallback-icon">🎮</span>
         </div>
       {{ end }}
-      <div class="post-content">
-        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-        <p class="date">
-          {{ .Date.Format "2. January 2006 kl. 15:04" }}
-          {{ with .Params.author }} &middot; Skrevet av {{ . }}{{ end }}
-        </p>
-        {{ with .Params.tags }}
-        <div class="post-tags">
-          {{ range first 3 . }}
-          <span class="tag">#{{ . }}</span>
-          {{ end }}
-        </div>
+    </div>
+
+    <!-- Paginering -->
+    {{ if gt .Paginator.TotalPages 1 }}
+      <div class="pagination">
+        {{ if .Paginator.HasPrev }}
+          <a href="{{ .Paginator.Prev.URL }}" class="prev">← Forrige</a>
         {{ end }}
-        {{ if and .Summary (ne .Summary .Title) }}
-        <p class="summary">{{ .Summary | truncate 150 }}</p>
+        {{ if .Paginator.HasNext }}
+          <a href="{{ .Paginator.Next.URL }}" class="next">Neste →</a>
         {{ end }}
       </div>
-    </div>
     {{ end }}
-  </div>
 
-  {{ if eq .Section "posts" }}
-  <div class="feedback-box">
-    <h3>🎯 Savner du noe?</h3>
-    <p>
-      Har du forslag til spill vi bør anmelde eller gaming-emner vi bør dekke?
-      <a href="/about/">Kontakt oss!</a>
-    </p>
-  </div>
+  {{ else }}
+    <p>Ingen innlegg funnet.</p>
   {{ end }}
-</div>
-{{ end }}
 {{ end }}
