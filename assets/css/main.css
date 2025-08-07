@@ -71,6 +71,7 @@ nav ul {
 nav a {
   font-weight: 500;
   color: var(--text);
+  font-size: 1.1rem;
 }
 
 nav a:hover {
