@@ -2,13 +2,12 @@
 title: "Monster Hunter Wilds - Jakten på det ultimate monsteret"
 date: 2025-08-06T15:00:00+02:00
 draft: false
+author: "Treorian"
 description: "Monster Hunter Wilds lover å bli det mest episke jaktspillet noensinne. Her er alt du trenger å vite om Capcoms kommende mesterwerk."
 tags: ["monster-hunter", "capcom", "action-rpg", "koop", "2025"]
 categories: ["Anmeldelser", "Kommende-spill"]
 featured_image: "https://sm.ign.com/t/ign_nordic/preview/m/monster-hu/monster-hunter-wilds-the-first-preview_vu9t.1200.jpg"
 ---
-
-# Monster Hunter Wilds - Jakten på det ultimate monsteret 🐉
 
 **Release:** Februar 2025  
 **Utvikler:** Capcom  

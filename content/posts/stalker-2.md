@@ -2,12 +2,11 @@
 title: "S.T.A.L.K.E.R. 2: Heart of Chornobyl - Tilbake til The Zone"  
 date: 2025-08-02T11:15:00+02:00
 draft: false
+author: "Treorian"
 description: "Etter 15 års venting er endelig S.T.A.L.K.E.R. serien tilbake. Heart of Chornobyl lover den ultimate post-apokalyptiske opplevelsen."
 tags: ["stalker", "fps", "survival-horror", "gsc-game-world", "ukraine"]
 categories: ["FPS", "Horror", "Kommende-spill"]
 ---
-
-# S.T.A.L.K.E.R. 2: Heart of Chornobyl - Tilbake til The Zone ☢️
 
 **Release:** Mars 2025  
 **Utvikler:** GSC Game World  

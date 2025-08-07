@@ -2,13 +2,12 @@
 title: "Space Engineers 2 - Keen Software bygger videre på suksessen"
 date: 2025-08-02T15:30:00+02:00
 draft: false
+author: "Treorian"
 description: "Space Engineers får en sequel! Kan Keen Software House toppe det originale engineering-mesterverket?"
 tags: ["space-engineers-2", "keen-software", "engineering", "sandbox", "space-sim"]
 categories: ["Simulation", "Sandbox"]
 featured_image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800"
 ---
-
-# Space Engineers 2 - Keen Software bygger videre på suksessen 🔧🚀
 
 **Release:** Early Access Q1 2025  
 **Utvikler:** Keen Software House  

@@ -2,13 +2,12 @@
 title: "The Alters - 11 Bit Studios' sci-fi survival med en twist"
 date: 2025-08-01T12:00:00+02:00
 draft: false
+author: "Treorian"
 description: "Fra skaperne av This War of Mine og Frostpunk kommer The Alters - et survival-spill hvor du må samarbeide med alternative versjoner av deg selv"
 tags: ["the-alters", "11bit-studios", "survival", "sci-fi", "narrative"]
 categories: ["Survival", "Indie"]
 featured_image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
 ---
-
-# The Alters - 11 Bit Studios' sci-fi survival med en twist 🔬👥
 
 **Release:** Q2 2025  
 **Utvikler:** 11 bit studios  

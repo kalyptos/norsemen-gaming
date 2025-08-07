@@ -5,8 +5,6 @@ draft: false
 description: "Lær mer om teamet bak Norsemen Gaming og vår misjon om å skape det beste norske gaming-innholdet"
 ---
 
-# Om Norsemen Gaming ⚔️
-
 **Skål og velkommen til vårt longhouse, gaming-kriger!**
 
 Vi er **Norsemen Gaming** - en samling av lidenskapelige norske gamere som har bestemt oss for å erobre den digitale verdenen med våre tastaturer og mus som våre sverd og skjold.

@@ -2,12 +2,11 @@
 title: "Civilization VII - Bygger imperiedrømmer på nytt" 
 date: 2025-08-05T14:30:00+02:00
 draft: false
+author: "Treorian"
 description: "Sid Meier's Civilization VII revolusjonerer 4X-sjangeren med helt nye mekanikker. Er dette endelig Civ-spillet vi har ventet på?"
 tags: ["civilization", "strategi", "4x", "firaxis", "2025"]
 categories: ["Strategi", "Kommende-spill"]
 ---
-
-# Civilization VII - Bygger imperiedrømmer på nytt 🏛️
 
 **Release:** Mars 2025  
 **Utvikler:** Firaxis Games  

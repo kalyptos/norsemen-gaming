@@ -2,13 +2,12 @@
 title: "Crimson Desert - Pearl Abyss' neste store eventyr"
 date: 2025-08-06T16:30:00+02:00
 draft: false
+author: "Treorian"
 description: "Fra skaperne av Black Desert kommer Crimson Desert - et open-world action-RPG som lover å revolusjonere sjangeren"
 tags: ["crimson-desert", "pearl-abyss", "action-rpg", "open-world", "2025"]
 categories: ["Action-RPG", "Kommende-spill"]
 featured_image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800"
 ---
-
-# Crimson Desert - Pearl Abyss' neste store eventyr ⚔️🏜️
 
 **Release:** Q4 2025  
 **Utvikler:** Pearl Abyss  

@@ -2,13 +2,12 @@
 title: "Diablo 4: Vessel of Hatred - Mephisto's ondskap sprer seg"
 date: 2025-07-30T10:30:00+02:00
 draft: false
+author: "Treorian"
 description: "Diablo 4's første expansion tar oss til Nahantu jungle for å konfrontere Mephisto. Er Vessel of Hatred verdt returnen til Sanctuary?"  
 tags: ["diablo-4", "vessel-of-hatred", "expansion", "arpg", "blizzard"]
 categories: ["Action-RPG", "Expansion"]
 featured_image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800"
 ---
-
-# Diablo 4: Vessel of Hatred - Mephisto's ondskap sprer seg 😈🌿
 
 **Release:** Oktober 2024 (allerede ute!)  
 **Utvikler:** Blizzard Entertainment  

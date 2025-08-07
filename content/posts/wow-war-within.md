@@ -2,13 +2,12 @@
 title: "World of Warcraft: The War Within - Azeroth under angrep"
 date: 2025-08-04T11:45:00+02:00
 draft: false
+author: "Treorian"
 description: "WoW's nyeste expansion tar oss under jorden i The War Within. Er dette expansionen som redder World of Warcraft?"
 tags: ["world-of-warcraft", "wow", "the-war-within", "mmorpg", "blizzard"]
 categories: ["MMORPG", "Expansion"]
 featured_image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800"
 ---
-
-# World of Warcraft: The War Within - Azeroth under angrep ⚔️🌍
 
 **Release:** August 2024 (allerede ute!)  
 **Utvikler:** Blizzard Entertainment  

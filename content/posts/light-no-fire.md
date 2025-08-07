@@ -2,13 +2,12 @@
 title: "Light No Fire - Hello Games' neste gigantiske prosjekt"
 date: 2025-08-05T13:20:00+02:00
 draft: false
+author: "Treorian"
 description: "Fra skaperne av No Man's Sky kommer Light No Fire - et multiplayer survival-spill på en hel planet. Kan de levere denne gangen?"
 tags: ["light-no-fire", "hello-games", "survival", "multiplayer", "exploration"]
 categories: ["Survival", "Multiplayer"]
 featured_image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
 ---
-
-# Light No Fire - Hello Games' neste gigantiske prosjekt 🔥🌍
 
 **Release:** 2025 (dato TBA)  
 **Utvikler:** Hello Games  

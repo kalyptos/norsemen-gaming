@@ -2,13 +2,12 @@
 title: "Star Citizen - Rommet venter fortsatt på oss"
 date: 2025-08-07T14:00:00+02:00
 draft: false
+author: "Treorian"
 description: "Star Citizen nærmer seg endelig en playable tilstand. Etter over et tiår i utvikling - er det verdt ventetiden?"
 tags: ["star-citizen", "space-sim", "crowdfunded", "alpha", "2025"]
 categories: ["Space-sim", "Early-access"]
 featured_image: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=800"
 ---
-
-# Star Citizen - Rommet venter fortsatt på oss 🚀
 
 **Status:** Alpha 3.24  
 **Utvikler:** Cloud Imperium Games  

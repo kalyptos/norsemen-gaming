@@ -2,12 +2,11 @@
 title: "Frostpunk 2 - Overlever i den ultimate vinterkrisen"
 date: 2025-08-03T13:20:00+02:00
 draft: false
+author: "Treorian"
 description: "30 år etter den første katastrofen står menneskeheten overfor nye utfordringer. Frostpunk 2 lover mer komplekse valg og større samfunn."
 tags: ["frostpunk", "strategi", "survival", "11bit-studios", "postapocalyptic"]
 categories: ["Strategi", "Survival"]
 ---
-
-# Frostpunk 2 - Overlever i den ultimate vinterkrisen ❄️
 
 **Release:** Januar 2025  
 **Utvikler:** 11 bit studios  

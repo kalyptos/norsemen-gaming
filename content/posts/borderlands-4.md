@@ -2,13 +2,12 @@
 title: "Borderlands 4 - Pandora kaller oss tilbake"
 date: 2025-07-31T14:20:00+02:00  
 draft: false
+author: "Treorian"
 description: "Gearbox er tilbake med Borderlands 4! Etter Borderlands 3's mixed reception, kan serien gjenvinne sin magi?"
 tags: ["borderlands-4", "gearbox", "looter-shooter", "coop", "pandora"]
 categories: ["FPS", "Looter-Shooter"]
 featured_image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800"
 ---
-
-# Borderlands 4 - Pandora kaller oss tilbake 🔫💥
 
 **Release:** 2025 (exact dato TBA)  
 **Utvikler:** Gearbox Software  
