@@ -4,8 +4,29 @@
     <h1>Velkommen til Norsemen Gaming</h1>
     <p>Hvor vikingene møter pikslene - norsk gaming på sitt beste!</p>
 </div>
-{{ end }}
 
+<div class="content-grid">
+    <h2>🎮 Nyeste Gaming-poster</h2>
+    <div class="post-list">
+        {{ range first 10 .Site.RegularPages }}
+        {{ if eq .Section "posts" }}
+        <div class="post-card">
+            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+            <p class="date">{{ .Date.Format "2. January 2006" }}</p>
+            {{ if .Summary }}
+            <p class="summary">{{ .Summary | truncate 150 }}</p>
+            {{ end }}
+        </div>
+        {{ end }}
+        {{ end }}
+    </div>
+    
+    <div style="text-align: center; margin-top: 2rem;">
+        <a href="/posts/" style="color: #00ff88; text-decoration: none; font-weight: bold;">→ Se alle poster</a>
+    </div>
+</div>
+
+{{ else }}
 <div class="content-grid">
     <h2>{{ .Title }}</h2>
     <div class="post-list">
@@ -13,8 +34,12 @@
         <div class="post-card">
             <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
             <p class="date">{{ .Date.Format "2. January 2006" }}</p>
+            {{ if .Summary }}
+            <p class="summary">{{ .Summary | truncate 150 }}</p>
+            {{ end }}
         </div>
         {{ end }}
     </div>
 </div>
+{{ end }}
 {{ end }}
