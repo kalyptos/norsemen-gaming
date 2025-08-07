@@ -6,6 +6,8 @@ type: "page"
 description: "Lær mer om teamet bak Norsemen Gaming og vår misjon om å skape det beste norske gaming-innholdet"
 ---
 
+<img src="/images/vikinggaming.png" alt="Viking Gamer Banner" style="max-width: 100%; border-radius: 12px;" />
+
 Vi er **Norsemen Gaming** – en samling lidenskapelige norske gamere som har bestemt oss for å erobre den digitale verdenen med tastatur og mus som våre sverd og skjold.
 
 ---
