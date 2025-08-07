@@ -8,7 +8,7 @@
 <div class="content-grid">
     <h2>🎮 Nyeste Gaming-poster</h2>
     <div class="post-list">
-        {{ range first 6 (where .Site.RegularPages "Section" "posts" | sort "Date" "desc") }}
+        {{ range first 6 (sort (where .Site.RegularPages "Section" "posts") "Date" "desc") }}
         <div class="post-card">
             {{ if .Params.featured_image }}
             <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="post-image">
@@ -28,7 +28,7 @@
         </div>
         {{ end }}
     </div>
-    
+
     <div style="text-align: center; margin-top: 3rem;">
         <a href="/posts/" style="color: #DAA520; text-decoration: none; font-weight: bold; padding: 1rem 2rem; border: 2px solid #DAA520; border-radius: 25px; transition: all 0.3s ease; display: inline-block;">
             ⚔️ Se alle gaming-poster →
@@ -40,21 +40,28 @@
 <!-- Posts page or other section pages -->
 <div class="content-grid">
     <h2>{{ if eq .Section "posts" }}🎮 Alle Gaming-poster{{ else }}{{ .Title }}{{ end }}</h2>
-    
+
     {{ if eq .Section "posts" }}
     <p style="color: #F5E8D8; opacity: 0.8; margin-bottom: 2rem; text-align: center;">
         Utforsk alle våre gaming-anmeldelser, nyheter og artikler sortert etter nyeste først!
     </p>
     {{ end }}
-    
+
     <div class="post-list">
-        {{ range (sort .Pages "Date" "desc") }}
+        {{ range sort .Pages "Date" "desc" }}
         <div class="post-card">
             {{ if .Params.featured_image }}
             <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="post-image">
             {{ if eq .Section "posts" }}
             <div class="post-overlay">
-                {{ if in .Tags "kommende-spill" }}KOMMER SNART{{ else if in .Tags "anmeldelser" }}ANMELDELSE{{ else if in .Tags "nyheter" }}NYHETER{{ else }}GAMING{{ end }}
+                {{ with .Params.tags }}
+                    {{ if in . "kommende-spill" }}KOMMER SNART
+                    {{ else if in . "anmeldelser" }}ANMELDELSE
+                    {{ else if in . "nyheter" }}NYHETER
+                    {{ else }}GAMING{{ end }}
+                {{ else }}
+                    GAMING
+                {{ end }}
             </div>
             {{ end }}
             {{ else }}
@@ -65,9 +72,9 @@
             <div class="post-content">
                 <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
                 <p class="date">{{ .Date.Format "2. January 2006" }}</p>
-                {{ if .Params.tags }}
+                {{ with .Params.tags }}
                 <div style="margin: 0.5rem 0;">
-                    {{ range first 3 .Params.tags }}
+                    {{ range first 3 . }}
                     <span style="background: rgba(218, 165, 32, 0.2); color: #DAA520; padding: 0.2rem 0.5rem; border-radius: 15px; font-size: 0.8rem; margin-right: 0.5rem;">
                         #{{ . }}
                     </span>
@@ -81,17 +88,16 @@
         </div>
         {{ end }}
     </div>
-    
+
     {{ if eq .Section "posts" }}
     <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(218, 165, 32, 0.1); border-radius: 10px;">
         <h3 style="color: #DAA520; margin-bottom: 1rem;">🎯 Savner du noe?</h3>
         <p style="color: #F5E8D8; opacity: 0.8;">
-            Har du forslag til spill vi bør anmelde eller gaming-emner vi bør dekke? 
+            Har du forslag til spill vi bør anmelde eller gaming-emner vi bør dekke?
             <a href="/about/" style="color: #FF6F61; text-decoration: none;">Kontakt oss!</a>
         </p>
     </div>
     {{ end }}
 </div>
-
 {{ end }}
 {{ end }}
