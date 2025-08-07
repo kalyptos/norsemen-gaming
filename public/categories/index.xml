@@ -1,60 +1,60 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on My New Hugo Site</title>
-    <link>http://localhost:1313/categories/</link>
-    <description>Recent content in Categories on My New Hugo Site</description>
+    <title>Categories on Norsemen Gaming</title>
+    <link>//localhost:1313/categories/</link>
+    <description>Recent content in Categories on Norsemen Gaming</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
+    <language>no</language>
     <lastBuildDate>Wed, 06 Aug 2025 15:00:00 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Anmeldelser</title>
-      <link>http://localhost:1313/categories/anmeldelser/</link>
+      <link>//localhost:1313/categories/anmeldelser/</link>
       <pubDate>Wed, 06 Aug 2025 15:00:00 +0200</pubDate>
-      <guid>http://localhost:1313/categories/anmeldelser/</guid>
+      <guid>//localhost:1313/categories/anmeldelser/</guid>
       <description></description>
     </item>
     <item>
       <title>Kommende-Spill</title>
-      <link>http://localhost:1313/categories/kommende-spill/</link>
+      <link>//localhost:1313/categories/kommende-spill/</link>
       <pubDate>Wed, 06 Aug 2025 15:00:00 +0200</pubDate>
-      <guid>http://localhost:1313/categories/kommende-spill/</guid>
+      <guid>//localhost:1313/categories/kommende-spill/</guid>
       <description></description>
     </item>
     <item>
       <title>Strategi</title>
-      <link>http://localhost:1313/categories/strategi/</link>
+      <link>//localhost:1313/categories/strategi/</link>
       <pubDate>Tue, 05 Aug 2025 14:30:00 +0200</pubDate>
-      <guid>http://localhost:1313/categories/strategi/</guid>
+      <guid>//localhost:1313/categories/strategi/</guid>
       <description></description>
     </item>
     <item>
       <title>RPG</title>
-      <link>http://localhost:1313/categories/rpg/</link>
+      <link>//localhost:1313/categories/rpg/</link>
       <pubDate>Mon, 04 Aug 2025 16:45:00 +0200</pubDate>
-      <guid>http://localhost:1313/categories/rpg/</guid>
+      <guid>//localhost:1313/categories/rpg/</guid>
       <description></description>
     </item>
     <item>
       <title>Survival</title>
-      <link>http://localhost:1313/categories/survival/</link>
+      <link>//localhost:1313/categories/survival/</link>
       <pubDate>Sun, 03 Aug 2025 13:20:00 +0200</pubDate>
-      <guid>http://localhost:1313/categories/survival/</guid>
+      <guid>//localhost:1313/categories/survival/</guid>
       <description></description>
     </item>
     <item>
       <title>FPS</title>
-      <link>http://localhost:1313/categories/fps/</link>
+      <link>//localhost:1313/categories/fps/</link>
       <pubDate>Sat, 02 Aug 2025 11:15:00 +0200</pubDate>
-      <guid>http://localhost:1313/categories/fps/</guid>
+      <guid>//localhost:1313/categories/fps/</guid>
       <description></description>
     </item>
     <item>
       <title>Horror</title>
-      <link>http://localhost:1313/categories/horror/</link>
+      <link>//localhost:1313/categories/horror/</link>
       <pubDate>Sat, 02 Aug 2025 11:15:00 +0200</pubDate>
-      <guid>http://localhost:1313/categories/horror/</guid>
+      <guid>//localhost:1313/categories/horror/</guid>
       <description></description>
     </item>
   </channel>

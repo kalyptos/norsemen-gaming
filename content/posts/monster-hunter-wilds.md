@@ -5,6 +5,7 @@ draft: false
 description: "Monster Hunter Wilds lover å bli det mest episke jaktspillet noensinne. Her er alt du trenger å vite om Capcoms kommende mesterwerk."
 tags: ["monster-hunter", "capcom", "action-rpg", "koop", "2025"]
 categories: ["Anmeldelser", "Kommende-spill"]
+featured_image: "https://sm.ign.com/t/ign_nordic/preview/m/monster-hu/monster-hunter-wilds-the-first-preview_vu9t.1200.jpg"
 ---
 
 # Monster Hunter Wilds - Jakten på det ultimate monsteret 🐉

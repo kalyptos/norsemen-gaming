@@ -1,172 +1,172 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on My New Hugo Site</title>
-    <link>http://localhost:1313/tags/</link>
-    <description>Recent content in Tags on My New Hugo Site</description>
+    <title>Tags on Norsemen Gaming</title>
+    <link>//localhost:1313/tags/</link>
+    <description>Recent content in Tags on Norsemen Gaming</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
+    <language>no</language>
     <lastBuildDate>Wed, 06 Aug 2025 15:00:00 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2025</title>
-      <link>http://localhost:1313/tags/2025/</link>
+      <link>//localhost:1313/tags/2025/</link>
       <pubDate>Wed, 06 Aug 2025 15:00:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/2025/</guid>
+      <guid>//localhost:1313/tags/2025/</guid>
       <description></description>
     </item>
     <item>
       <title>Action-Rpg</title>
-      <link>http://localhost:1313/tags/action-rpg/</link>
+      <link>//localhost:1313/tags/action-rpg/</link>
       <pubDate>Wed, 06 Aug 2025 15:00:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/action-rpg/</guid>
+      <guid>//localhost:1313/tags/action-rpg/</guid>
       <description></description>
     </item>
     <item>
       <title>Capcom</title>
-      <link>http://localhost:1313/tags/capcom/</link>
+      <link>//localhost:1313/tags/capcom/</link>
       <pubDate>Wed, 06 Aug 2025 15:00:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/capcom/</guid>
+      <guid>//localhost:1313/tags/capcom/</guid>
       <description></description>
     </item>
     <item>
       <title>Koop</title>
-      <link>http://localhost:1313/tags/koop/</link>
+      <link>//localhost:1313/tags/koop/</link>
       <pubDate>Wed, 06 Aug 2025 15:00:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/koop/</guid>
+      <guid>//localhost:1313/tags/koop/</guid>
       <description></description>
     </item>
     <item>
       <title>Monster-Hunter</title>
-      <link>http://localhost:1313/tags/monster-hunter/</link>
+      <link>//localhost:1313/tags/monster-hunter/</link>
       <pubDate>Wed, 06 Aug 2025 15:00:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/monster-hunter/</guid>
+      <guid>//localhost:1313/tags/monster-hunter/</guid>
       <description></description>
     </item>
     <item>
       <title>4x</title>
-      <link>http://localhost:1313/tags/4x/</link>
+      <link>//localhost:1313/tags/4x/</link>
       <pubDate>Tue, 05 Aug 2025 14:30:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/4x/</guid>
+      <guid>//localhost:1313/tags/4x/</guid>
       <description></description>
     </item>
     <item>
       <title>Civilization</title>
-      <link>http://localhost:1313/tags/civilization/</link>
+      <link>//localhost:1313/tags/civilization/</link>
       <pubDate>Tue, 05 Aug 2025 14:30:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/civilization/</guid>
+      <guid>//localhost:1313/tags/civilization/</guid>
       <description></description>
     </item>
     <item>
       <title>Firaxis</title>
-      <link>http://localhost:1313/tags/firaxis/</link>
+      <link>//localhost:1313/tags/firaxis/</link>
       <pubDate>Tue, 05 Aug 2025 14:30:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/firaxis/</guid>
+      <guid>//localhost:1313/tags/firaxis/</guid>
       <description></description>
     </item>
     <item>
       <title>Strategi</title>
-      <link>http://localhost:1313/tags/strategi/</link>
+      <link>//localhost:1313/tags/strategi/</link>
       <pubDate>Tue, 05 Aug 2025 14:30:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/strategi/</guid>
+      <guid>//localhost:1313/tags/strategi/</guid>
       <description></description>
     </item>
     <item>
       <title>Kingdom-Come</title>
-      <link>http://localhost:1313/tags/kingdom-come/</link>
+      <link>//localhost:1313/tags/kingdom-come/</link>
       <pubDate>Mon, 04 Aug 2025 16:45:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/kingdom-come/</guid>
+      <guid>//localhost:1313/tags/kingdom-come/</guid>
       <description></description>
     </item>
     <item>
       <title>Middelalder</title>
-      <link>http://localhost:1313/tags/middelalder/</link>
+      <link>//localhost:1313/tags/middelalder/</link>
       <pubDate>Mon, 04 Aug 2025 16:45:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/middelalder/</guid>
+      <guid>//localhost:1313/tags/middelalder/</guid>
       <description></description>
     </item>
     <item>
       <title>Realisme</title>
-      <link>http://localhost:1313/tags/realisme/</link>
+      <link>//localhost:1313/tags/realisme/</link>
       <pubDate>Mon, 04 Aug 2025 16:45:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/realisme/</guid>
+      <guid>//localhost:1313/tags/realisme/</guid>
       <description></description>
     </item>
     <item>
       <title>Rpg</title>
-      <link>http://localhost:1313/tags/rpg/</link>
+      <link>//localhost:1313/tags/rpg/</link>
       <pubDate>Mon, 04 Aug 2025 16:45:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/rpg/</guid>
+      <guid>//localhost:1313/tags/rpg/</guid>
       <description></description>
     </item>
     <item>
       <title>Warhorse</title>
-      <link>http://localhost:1313/tags/warhorse/</link>
+      <link>//localhost:1313/tags/warhorse/</link>
       <pubDate>Mon, 04 Aug 2025 16:45:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/warhorse/</guid>
+      <guid>//localhost:1313/tags/warhorse/</guid>
       <description></description>
     </item>
     <item>
       <title>11bit-Studios</title>
-      <link>http://localhost:1313/tags/11bit-studios/</link>
+      <link>//localhost:1313/tags/11bit-studios/</link>
       <pubDate>Sun, 03 Aug 2025 13:20:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/11bit-studios/</guid>
+      <guid>//localhost:1313/tags/11bit-studios/</guid>
       <description></description>
     </item>
     <item>
       <title>Frostpunk</title>
-      <link>http://localhost:1313/tags/frostpunk/</link>
+      <link>//localhost:1313/tags/frostpunk/</link>
       <pubDate>Sun, 03 Aug 2025 13:20:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/frostpunk/</guid>
+      <guid>//localhost:1313/tags/frostpunk/</guid>
       <description></description>
     </item>
     <item>
       <title>Postapocalyptic</title>
-      <link>http://localhost:1313/tags/postapocalyptic/</link>
+      <link>//localhost:1313/tags/postapocalyptic/</link>
       <pubDate>Sun, 03 Aug 2025 13:20:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/postapocalyptic/</guid>
+      <guid>//localhost:1313/tags/postapocalyptic/</guid>
       <description></description>
     </item>
     <item>
       <title>Survival</title>
-      <link>http://localhost:1313/tags/survival/</link>
+      <link>//localhost:1313/tags/survival/</link>
       <pubDate>Sun, 03 Aug 2025 13:20:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/survival/</guid>
+      <guid>//localhost:1313/tags/survival/</guid>
       <description></description>
     </item>
     <item>
       <title>Fps</title>
-      <link>http://localhost:1313/tags/fps/</link>
+      <link>//localhost:1313/tags/fps/</link>
       <pubDate>Sat, 02 Aug 2025 11:15:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/fps/</guid>
+      <guid>//localhost:1313/tags/fps/</guid>
       <description></description>
     </item>
     <item>
       <title>Gsc-Game-World</title>
-      <link>http://localhost:1313/tags/gsc-game-world/</link>
+      <link>//localhost:1313/tags/gsc-game-world/</link>
       <pubDate>Sat, 02 Aug 2025 11:15:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/gsc-game-world/</guid>
+      <guid>//localhost:1313/tags/gsc-game-world/</guid>
       <description></description>
     </item>
     <item>
       <title>Stalker</title>
-      <link>http://localhost:1313/tags/stalker/</link>
+      <link>//localhost:1313/tags/stalker/</link>
       <pubDate>Sat, 02 Aug 2025 11:15:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/stalker/</guid>
+      <guid>//localhost:1313/tags/stalker/</guid>
       <description></description>
     </item>
     <item>
       <title>Survival-Horror</title>
-      <link>http://localhost:1313/tags/survival-horror/</link>
+      <link>//localhost:1313/tags/survival-horror/</link>
       <pubDate>Sat, 02 Aug 2025 11:15:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/survival-horror/</guid>
+      <guid>//localhost:1313/tags/survival-horror/</guid>
       <description></description>
     </item>
     <item>
       <title>Ukraine</title>
-      <link>http://localhost:1313/tags/ukraine/</link>
+      <link>//localhost:1313/tags/ukraine/</link>
       <pubDate>Sat, 02 Aug 2025 11:15:00 +0200</pubDate>
-      <guid>http://localhost:1313/tags/ukraine/</guid>
+      <guid>//localhost:1313/tags/ukraine/</guid>
       <description></description>
     </item>
   </channel>

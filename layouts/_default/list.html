@@ -8,21 +8,31 @@
 <div class="content-grid">
     <h2>🎮 Nyeste Gaming-poster</h2>
     <div class="post-list">
-        {{ range first 10 .Site.RegularPages }}
+        {{ range first 6 .Site.RegularPages }}
         {{ if eq .Section "posts" }}
         <div class="post-card">
-            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-            <p class="date">{{ .Date.Format "2. January 2006" }}</p>
-            {{ if .Summary }}
-            <p class="summary">{{ .Summary | truncate 150 }}</p>
+            {{ if .Params.featured_image }}
+            <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="post-image">
+            <div class="post-overlay">NYE SPILL</div>
+            {{ else }}
+            <div style="height: 200px; background: linear-gradient(45deg, #00ff88, #0099cc); display: flex; align-items: center; justify-content: center;">
+                <span style="font-size: 3rem;">🎮</span>
+            </div>
             {{ end }}
+            <div class="post-content">
+                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                <p class="date">{{ .Date.Format "2. January 2006" }}</p>
+                {{ if .Summary }}
+                <p class="summary">{{ .Summary | truncate 120 }}</p>
+                {{ end }}
+            </div>
         </div>
         {{ end }}
         {{ end }}
     </div>
     
-    <div style="text-align: center; margin-top: 2rem;">
-        <a href="/posts/" style="color: #00ff88; text-decoration: none; font-weight: bold;">→ Se alle poster</a>
+    <div style="text-align: center; margin-top: 3rem;">
+        <a href="/posts/" style="color: #00ff88; text-decoration: none; font-weight: bold; padding: 1rem 2rem; border: 2px solid #00ff88; border-radius: 25px; transition: all 0.3s ease;">→ Se alle poster</a>
     </div>
 </div>
 
@@ -32,11 +42,20 @@
     <div class="post-list">
         {{ range .Pages }}
         <div class="post-card">
-            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-            <p class="date">{{ .Date.Format "2. January 2006" }}</p>
-            {{ if .Summary }}
-            <p class="summary">{{ .Summary | truncate 150 }}</p>
+            {{ if .Params.featured_image }}
+            <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="post-image">
+            {{ else }}
+            <div style="height: 200px; background: linear-gradient(45deg, #00ff88, #0099cc); display: flex; align-items: center; justify-content: center;">
+                <span style="font-size: 3rem;">🎮</span>
+            </div>
             {{ end }}
+            <div class="post-content">
+                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                <p class="date">{{ .Date.Format "2. January 2006" }}</p>
+                {{ if .Summary }}
+                <p class="summary">{{ .Summary | truncate 120 }}</p>
+                {{ end }}
+            </div>
         </div>
         {{ end }}
     </div>

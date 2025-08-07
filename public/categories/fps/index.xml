@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>FPS on My New Hugo Site</title>
-    <link>http://localhost:1313/categories/fps/</link>
-    <description>Recent content in FPS on My New Hugo Site</description>
+    <title>FPS on Norsemen Gaming</title>
+    <link>//localhost:1313/categories/fps/</link>
+    <description>Recent content in FPS on Norsemen Gaming</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
+    <language>no</language>
     <lastBuildDate>Sat, 02 Aug 2025 11:15:00 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/fps/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/categories/fps/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>S.T.A.L.K.E.R. 2: Heart of Chornobyl - Tilbake til The Zone</title>
-      <link>http://localhost:1313/posts/stalker-2/</link>
+      <link>//localhost:1313/posts/s.t.a.l.k.e.r.-2-heart-of-chornobyl-tilbake-til-the-zone/</link>
       <pubDate>Sat, 02 Aug 2025 11:15:00 +0200</pubDate>
-      <guid>http://localhost:1313/posts/stalker-2/</guid>
+      <guid>//localhost:1313/posts/s.t.a.l.k.e.r.-2-heart-of-chornobyl-tilbake-til-the-zone/</guid>
       <description>&lt;h1 id=&#34;stalker-2-heart-of-chornobyl---tilbake-til-the-zone-&#34;&gt;S.T.A.L.K.E.R. 2: Heart of Chornobyl - Tilbake til The Zone ☢️&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Release:&lt;/strong&gt; Mars 2025&lt;br&gt;&#xA;&lt;strong&gt;Utvikler:&lt;/strong&gt; GSC Game World&lt;br&gt;&#xA;&lt;strong&gt;Plattform:&lt;/strong&gt; PC, Xbox Series X/S&lt;/p&gt;&#xA;&lt;p&gt;Endelig! Etter 15 års venting får vi den ultimate &lt;strong&gt;S.T.A.L.K.E.R.&lt;/strong&gt;-opplevelsen. Som fans av den originale trilogien kan vi knapt holde igjen spenningen!&lt;/p&gt;&#xA;&lt;h2 id=&#34;velkommen-tilbake-til-the-zone&#34;&gt;Velkommen tilbake til The Zone&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Heart of Chornobyl&lt;/strong&gt; tar oss tilbake til den post-apokalyptiske ødemarkken rundt Chernobyl, men nå med moderne teknologi og en helt ny historie. Du spiller som Skif, en ny stalker som må navigere de farlige anomaliene og faksjonene i The Zone.&lt;/p&gt;</description>
     </item>
   </channel>
