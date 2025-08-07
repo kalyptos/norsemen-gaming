@@ -1,0 +1,53 @@
+/* components.css – kort, tags, highlight, knapper */
+article {
+  background-color: var(--surface);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+.post-meta {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.post-tags {
+  margin-top: 0.5rem;
+}
+
+.tag {
+  background-color: var(--border);
+  color: var(--text-muted);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-right: 0.4rem;
+}
+
+.highlight {
+  color: var(--highlight);
+  font-weight: bold;
+}
+
+.post-meta span + span {
+  margin-left: 0.5rem;
+}
+
+.read-more {
+  margin-top: auto;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--accent);
+  color: #000;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.read-more:hover {
+  background-color: var(--accent-hover);
+  color: #000;
+}
