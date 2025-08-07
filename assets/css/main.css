@@ -206,4 +206,5 @@ img {
 
 .read-more:hover {
   background-color: var(--accent-hover);
+  color: #000;
 }
