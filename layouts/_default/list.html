@@ -1,45 +1,29 @@
 {{ define "main" }}
-  {{ if .Paginator.Pages }}
-    <div class="post-grid">
-      {{ range .Paginator.Pages }}
-        <div class="post-card">
+  <div class="post-grid">
+    {{ range first 6 (where .Site.RegularPages "Type" "posts") }}
+      <div class="post-card">
 
-          {{ with .Params.featured_image }}
-            <img src="{{ . | relURL }}" alt="{{ $.Title | default "Post image" }}">
-          {{ end }}
+        {{ with .Params.featured_image }}
+          <img src="{{ . | relURL }}" alt="{{ $.Title | default "Post image" }}">
+        {{ end }}
 
-          <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
 
-          <div class="post-meta">
-            {{ .Date.Format "2. January 2006 kl. 15:04" }}
-            {{ with .Params.author }} | Skrevet av {{ . }}{{ end }}
-          </div>
-
-          <div class="post-meta">
-            {{ with .Params.status }}<strong>Status:</strong> {{ . }}<br>{{ end }}
-            {{ with .Params.utvikler }}<strong>Utvikler:</strong> {{ . }}<br>{{ end }}
-            {{ with .Params.plattform }}<strong>Plattform:</strong> {{ . }}<br>{{ end }}
-            {{ with .Params.crowdfunding }}<strong>Crowdfunding:</strong> {{ . }} 💰<br>{{ end }}
-          </div>
-
-          <a href="{{ .RelPermalink }}" class="read-more">Les mer →</a>
-
+        <div class="post-meta">
+          {{ .Date.Format "2. January 2006 kl. 15:04" }}
+          {{ with .Params.author }} | Skrevet av {{ . }}{{ end }}
         </div>
-      {{ end }}
-    </div>
 
-    {{ if gt .Paginator.TotalPages 1 }}
-      <div class="pagination">
-        {{ if .Paginator.HasPrev }}
-          <a href="{{ .Paginator.Prev.URL }}" class="prev">← Forrige</a>
-        {{ end }}
-        {{ if .Paginator.HasNext }}
-          <a href="{{ .Paginator.Next.URL }}" class="next">Neste →</a>
-        {{ end }}
+        <div class="post-meta">
+          {{ with .Params.status }}<strong>Status:</strong> {{ . }}<br>{{ end }}
+          {{ with .Params.utvikler }}<strong>Utvikler:</strong> {{ . }}<br>{{ end }}
+          {{ with .Params.plattform }}<strong>Plattform:</strong> {{ . }}<br>{{ end }}
+          {{ with .Params.crowdfunding }}<strong>Crowdfunding:</strong> {{ . }} 💰<br>{{ end }}
+        </div>
+
+        <a href="{{ .RelPermalink }}" class="read-more">Les mer →</a>
+
       </div>
     {{ end }}
-
-  {{ else }}
-    <p>Ingen innlegg funnet.</p>
-  {{ end }}
+  </div>
 {{ end }}
