@@ -6,7 +6,7 @@ type: "page"
 description: "Lær mer om teamet bak Norsemen Gaming og vår misjon om å skape det beste norske gaming-innholdet"
 ---
 
-# Skål og velkommen til vårt longhouse, gaming-kriger! ⚔️
+![Banner](/images/vikinggaming.png)
 
 Vi er **Norsemen Gaming** – en samling lidenskapelige norske gamere som har bestemt oss for å erobre den digitale verdenen med tastatur og mus som våre sverd og skjold.
 
