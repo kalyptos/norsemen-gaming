@@ -1,3 +1,9 @@
-baseURL = 'http://localhost'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = 'https://venerable-salmiakki-17c377.netlify.app'  # Oppdater med din faktiske Netlify URL
+languageCode = 'no'
+title = 'Norsemen Gaming'
+
+[params]
+  mainSections = ["posts"]
+
+[permalinks]
+  posts = "/posts/:title/"
