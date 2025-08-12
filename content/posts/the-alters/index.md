@@ -1,4 +1,5 @@
 ---
+featured: "feature.jpg"
 title: "The Alters - 11 Bit Studios' sci-fi survival med en twist"
 date: 2025-08-01T12:00:00+02:00
 draft: false

@@ -1,4 +1,5 @@
 ---
+featured: "feature.jpg"
 title: "Borderlands 4 - Pandora kaller oss tilbake"
 date: 2025-07-31T14:20:00+02:00  
 draft: false

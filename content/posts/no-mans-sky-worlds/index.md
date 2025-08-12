@@ -1,4 +1,5 @@
 ---
+featured: "feature.jpg"
 title: "No Man's Sky: Worlds Update - Universet blir enda større"
 date: 2025-08-03T09:15:00+02:00
 draft: false

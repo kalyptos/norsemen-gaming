@@ -1,4 +1,5 @@
 ---
+featured: "feature.jpg"
 title: "S.T.A.L.K.E.R. 2: Heart of Chornobyl - Tilbake til The Zone"  
 date: 2025-08-02T11:15:00+02:00
 draft: false

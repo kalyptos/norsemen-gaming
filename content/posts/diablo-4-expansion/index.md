@@ -1,4 +1,5 @@
 ---
+featured: "feature.jpg"
 title: "Diablo 4: Vessel of Hatred - Mephisto's ondskap sprer seg"
 date: 2025-07-30T10:30:00+02:00
 draft: false

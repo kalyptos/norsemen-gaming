@@ -1,4 +1,5 @@
 ---
+featured: "feature.jpg"
 title: "Kingdom Come: Deliverance 2 - Middelalder-RPG får oppfølger"
 date: 2025-08-04T16:45:00+02:00  
 draft: false

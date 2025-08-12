@@ -1,4 +1,5 @@
 ---
+featured: "feature.jpg"
 title: "Light No Fire - Hello Games' neste gigantiske prosjekt"
 date: 2025-08-05T13:20:00+02:00
 draft: false

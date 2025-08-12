@@ -1,4 +1,5 @@
 ---
+featured: "feature.jpg"
 title: "Space Engineers 2 - Keen Software bygger videre på suksessen"
 date: 2025-08-02T15:30:00+02:00
 draft: false

@@ -1,4 +1,5 @@
 ---
+featured: "feature.jpg"
 title: "Monster Hunter Wilds - Jakten på det ultimate monsteret"
 date: 2025-08-06T15:00:00+02:00
 draft: false

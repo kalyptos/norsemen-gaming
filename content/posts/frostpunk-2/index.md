@@ -1,4 +1,5 @@
 ---
+featured: "feature.jpg"
 title: "Frostpunk 2 - Overlever i den ultimate vinterkrisen"
 date: 2025-08-03T13:20:00+02:00
 draft: false

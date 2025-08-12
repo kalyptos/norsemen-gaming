@@ -1,4 +1,5 @@
 ---
+featured: "feature.jpg"
 title: "World of Warcraft: The War Within - Azeroth under angrep"
 date: 2025-08-04T11:45:00+02:00
 draft: false

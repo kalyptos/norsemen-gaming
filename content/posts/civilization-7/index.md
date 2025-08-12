@@ -1,4 +1,5 @@
 ---
+featured: "feature.jpg"
 title: "Civilization VII - Bygger imperiedrømmer på nytt" 
 date: 2025-08-05T14:30:00+02:00
 draft: false

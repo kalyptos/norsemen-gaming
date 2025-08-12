@@ -1,4 +1,5 @@
 ---
+featured: "feature.jpg"
 title: "Crimson Desert - Pearl Abyss' neste store eventyr"
 date: 2025-08-06T16:30:00+02:00
 draft: false
