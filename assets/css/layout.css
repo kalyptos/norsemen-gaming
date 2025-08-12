@@ -9,7 +9,7 @@
 
 /* Header */
 header {
-  background: transparent;
+  background: rgba(12, 15, 18, 0.7);
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
@@ -17,19 +17,46 @@ header {
   backdrop-filter: saturate(140%) blur(8px);
 }
 
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: .75rem;
+}
+
+/* Brand */
+.brand { display: inline-flex; align-items: center; gap: .6rem; text-decoration: none; }
+.brand-logo { height: 24px; width: auto; display: block; }
+.brand-text {
+  color: var(--text);
+  font-weight: 800;
+  letter-spacing: .02em;
+  font-size: 1.05rem;
+}
+
 /* Nav */
-.nav {
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   gap: .25rem;
+  align-items: center;
   flex-wrap: wrap;
 }
+.nav li { margin: 0; padding: 0; }
+
 .nav a {
   color: var(--muted);
   text-decoration: none;
-  padding: .6rem .8rem;
+  padding: .55rem .8rem;
   border-radius: 10px;
   transition: background .18s ease, color .18s ease;
+  display: inline-block;
+  line-height: 1;
 }
+
 .nav a:hover,
 .nav a[aria-current="page"] {
   color: #000;
