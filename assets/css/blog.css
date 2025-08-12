@@ -33,3 +33,24 @@
   text-decoration: none;
 }
 .post-card h3 a:hover { color: var(--accent); }
+
+/* Strekk alle cards likt i gridet */
+.post-grid { align-items: stretch; }
+.post-grid > * { height: 100%; }
+
+/* Gjør kortet fleksibelt og pin "Les mer" i bunn */
+.post-card { display: flex; flex-direction: column; }
+.post-card .content { display: flex; flex-direction: column; gap: .6rem; flex: 1; }
+.post-card .btn { margin-top: auto; align-self: flex-start; }
+
+/* Klipp sammendrag til 3 linjer for jevn høyde */
+.post-card p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* (Valgfritt) liten minimumshøyde for ekstra jevnhet */
+.post-card { min-height: clamp(260px, 30vw, 340px); }
