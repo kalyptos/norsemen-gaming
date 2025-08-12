@@ -12,26 +12,32 @@
   <meta property="og:description" content="{{ with .Summary }}{{ . | plainify | truncate 160 }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
   <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}" />
   <meta property="og:url" content="{{ .Permalink }}" />
+
+  {{/* OG/Twitter-bilde: bundle → assets, med Extended-guard */}}
   {{ with .Params.featured }}
-    {{ $img := resources.Get (printf "images/%s" .) }}
+    {{ $img := or ($.Resources.GetMatch .) (resources.Get (printf "images/%s" .)) }}
     {{ with $img }}
-      {{ $og := .Fit "1200x630 webp q75" }}
-      <meta property="og:image" content="{{ $og.Permalink }}" />
+      {{ if hugo.IsExtended }}
+        {{ $og := .Fit "1200x630 webp q75" }}
+        <meta property="og:image" content="{{ $og.Permalink }}" />
+        <meta name="twitter:image" content="{{ $og.Permalink }}" />
+      {{ else }}
+        <meta property="og:image" content="{{ .Permalink }}" />
+        <meta name="twitter:image" content="{{ .Permalink }}" />
+      {{ end }}
     {{ end }}
   {{ end }}
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}" />
   <meta name="twitter:description" content="{{ with .Summary }}{{ . | plainify | truncate 160 }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
 
-  {{/* --- CSS bundle med Hugo Pipes (unngår @import-problemer) --- */}}
+  {{/* CSS-bundle: robust uten @import i main.css */}}
   {{ $vars := resources.Get "css/variables.css" }}
   {{ $base := resources.Get "css/base.css" }}
   {{ $layout := resources.Get "css/layout.css" }}
   {{ $components := resources.Get "css/components.css" }}
   {{ $blog := resources.Get "css/blog.css" }}
-
   {{ $bundle := slice $vars $base $layout $components $blog | resources.Concat "css/app.css" | resources.Minify | fingerprint }}
   <link rel="stylesheet" href="{{ $bundle.RelPermalink }}" integrity="{{ $bundle.Data.Integrity }}" crossorigin="anonymous" />
 </head>

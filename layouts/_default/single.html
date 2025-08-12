@@ -9,11 +9,16 @@
     </p>
   </header>
 
+  {{/* Featured-bilde: bundle → assets */}}
   {{ with .Params.featured }}
-    {{ $img := resources.Get (printf "images/%s" .) }}
+    {{ $img := or ($.Resources.GetMatch .) (resources.Get (printf "images/%s" .)) }}
     {{ with $img }}
-      {{ $full := .Fit "1200x675 webp q75" }}
-      <img class="thumb" src="{{ $full.RelPermalink }}" alt="{{ $.Title }}" loading="lazy" decoding="async" />
+      {{ if hugo.IsExtended }}
+        {{ $full := .Fit "1200x675 webp q75" }}
+        <img class="thumb" src="{{ $full.RelPermalink }}" alt="{{ $.Title }}" loading="lazy" decoding="async" />
+      {{ else }}
+        <img class="thumb" src="{{ .RelPermalink }}" alt="{{ $.Title }}" loading="lazy" decoding="async" />
+      {{ end }}
     {{ end }}
   {{ end }}
 

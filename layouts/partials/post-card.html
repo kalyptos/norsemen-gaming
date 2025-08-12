@@ -1,27 +1,45 @@
 {{/* layouts/partials/post-card.html */}}
-<article class="card post-card">
+
+{{/* 1) featured i bundle → 2) assets/images → 3) første bilde i posten */}}
+{{ $img := .Resources.GetMatch (printf "*%s*" (or .Params.featured "")) }}
+
+{{ if not $img }}
   {{ with .Params.featured }}
-    {{ $img := resources.Get (printf "images/%s" .) }}
-    {{ with $img }}
-      {{ $w800 := .Fit "800x450 webp q75" }}
+    {{ with resources.Get (printf "images/%s" .) }}
+      {{ $img = . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if not $img }}
+  {{ with .Resources.ByType "image" }}
+    {{ if gt (len .) 0 }}{{ $img = index . 0 }}{{ end }}
+  {{ end }}
+{{ end }}
+
+<article class="card post-card">
+  {{ with $img }}
+    {{ if hugo.IsExtended }}
       {{ $w400 := .Fit "400x225 webp q75" }}
+      {{ $w800 := .Fit "800x450 webp q75" }}
       <a href="{{ $.Permalink }}">
-        <img
-          class="thumb"
-          src="{{ $w400.RelPermalink }}"
-          srcset="{{ $w400.RelPermalink }} 400w, {{ $w800.RelPermalink }} 800w"
-          sizes="(max-width: 600px) 90vw, 300px"
-          alt="{{ $.Title }}"
-          loading="lazy" decoding="async" />
+        <img class="thumb"
+             src="{{ $w400.RelPermalink }}"
+             srcset="{{ $w400.RelPermalink }} 400w, {{ $w800.RelPermalink }} 800w"
+             sizes="(max-width: 600px) 90vw, 300px"
+             alt="{{ $.Title }}"
+             loading="lazy" decoding="async" />
+      </a>
+    {{ else }}
+      <a href="{{ $.Permalink }}">
+        <img class="thumb" src="{{ .RelPermalink }}" alt="{{ $.Title }}" loading="lazy" decoding="async" />
       </a>
     {{ end }}
   {{ end }}
 
   <div class="content">
     <div class="meta">
-      {{ with .Date }}{{ .Format "2. Jan 2006" }} ·{{ end }}
-      {{ with .Params.author }} {{ . }}{{ end }}
-      {{ with .Params.categories }} · {{ delimit . ", " }}{{ end }}
+      {{ .Date.Format "2. Jan 2006" }}{{ with .Params.author }} · {{ . }}{{ end }}{{ with .Params.categories }} · {{ delimit . ", " }}{{ end }}
     </div>
     <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
     <p>{{ .Summary | plainify | truncate 140 }}</p>
