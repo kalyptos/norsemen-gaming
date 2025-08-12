@@ -1,9 +1,17 @@
-baseURL = 'https://norsemen.ovh'  # Oppdater med din faktiske Netlify URL
+baseURL = 'https://norsemen.ovh'
 languageCode = 'no'
 title = 'Norsemen Gaming'
 
 [params]
-  mainSections = ["posts"]
+  description = 'Nyheter, guider og meninger om spill – fra en norse-gamer.'
+  author = 'Norsemen'
+
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
 
 [permalinks]
-  posts = "/posts/:title/"
+  posts = '/posts/:title/'
+
+[minify]
+  minifyOutput = true

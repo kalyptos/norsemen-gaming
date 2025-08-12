@@ -1,27 +1,29 @@
-/* base.css – typografi, body, lenker, bilder */
-body {
-  font-family: 'Rajdhani', sans-serif;
-  margin: 0;
-  background-color: var(--bg);
-  color: var(--text);
-}
+/* base.css – typografi, lenker, bilder, utilities */
 
-a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--accent-hover);
-}
-
-h1, h2, h3, h4 {
-  color: var(--text);
-  margin-top: 0;
-}
+a { color: var(--accent); }
+a:hover { color: var(--accent-hover); }
 
 img {
   max-width: 100%;
   border-radius: 6px;
-  margin-bottom: 1rem;
+  display: block;
 }
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+code, pre {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+pre { padding: 1rem; overflow-x: auto; }
+code { padding: .15rem .35rem; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+/* Utilities */
+.muted { color: var(--muted); }
+.center { text-align: center; }

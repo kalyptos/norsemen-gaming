@@ -1,28 +1,24 @@
 {{ define "main" }}
-<article>
+<article class="container">
+  <header style="margin-bottom: 1.25rem;">
+    <h1>{{ .Title }}</h1>
+    <p class="meta muted">
+      {{ .Date.Format "2. Jan 2006" }}
+      {{ with .Params.author }} · {{ . }}{{ end }}
+      {{ with .Params.categories }} · {{ delimit . ", " }}{{ end }}
+    </p>
+  </header>
 
-  {{ if .Params.featured_image }}
-    <img src="{{ .Params.featured_image | relURL }}" alt="{{ .Title }}" class="post-image">
-  {{ end }}
-
-  <h1>{{ .Title }}</h1>
-
-  <div class="post-meta">
-    <span>{{ .Date.Format "2. January 2006 kl. 15:04" }}</span>
-    {{ with .Params.author }}&nbsp;|&nbsp;<span>Skrevet av {{ . }}</span>{{ end }}
-  </div>
-
-  {{ with .Params.tags }}
-    <div class="post-tags">
-      {{ range . }}
-        <span class="tag">#{{ . }}</span>
-      {{ end }}
-    </div>
+  {{ with .Params.featured }}
+    {{ $img := resources.Get (printf "images/%s" .) }}
+    {{ with $img }}
+      {{ $full := .Fit "1200x675 webp q75" }}
+      <img class="thumb" src="{{ $full.RelPermalink }}" alt="{{ $.Title }}" loading="lazy" decoding="async" />
+    {{ end }}
   {{ end }}
 
   <div class="content">
     {{ .Content }}
   </div>
-
 </article>
 {{ end }}

@@ -1,0 +1,30 @@
+{{/* layouts/partials/post-card.html */}}
+<article class="card post-card">
+  {{ with .Params.featured }}
+    {{ $img := resources.Get (printf "images/%s" .) }}
+    {{ with $img }}
+      {{ $w800 := .Fit "800x450 webp q75" }}
+      {{ $w400 := .Fit "400x225 webp q75" }}
+      <a href="{{ $.Permalink }}">
+        <img
+          class="thumb"
+          src="{{ $w400.RelPermalink }}"
+          srcset="{{ $w400.RelPermalink }} 400w, {{ $w800.RelPermalink }} 800w"
+          sizes="(max-width: 600px) 90vw, 300px"
+          alt="{{ $.Title }}"
+          loading="lazy" decoding="async" />
+      </a>
+    {{ end }}
+  {{ end }}
+
+  <div class="content">
+    <div class="meta">
+      {{ with .Date }}{{ .Format "2. Jan 2006" }} ·{{ end }}
+      {{ with .Params.author }} {{ . }}{{ end }}
+      {{ with .Params.categories }} · {{ delimit . ", " }}{{ end }}
+    </div>
+    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    <p>{{ .Summary | plainify | truncate 140 }}</p>
+    <a class="btn" href="{{ .Permalink }}">Les mer</a>
+  </div>
+</article>

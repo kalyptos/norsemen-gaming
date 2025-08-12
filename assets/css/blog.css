@@ -1,68 +1,35 @@
-/* blog.css – grid layout og bloggkort */
+/* blog.css – grid og post-kort */
+
+/* Grid */
 .post-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: clamp(1rem, 2vw, 1.25rem);
 }
 
-.post-card {
-  background-color: var(--surface);
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.2s ease;
+/* Post card */
+.post-card .thumb {
+  aspect-ratio: 16/9;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+.post-card .content { padding: 1rem; }
+
+.post-card .meta {
+  color: var(--muted);
+  font-size: .9rem;
+  margin-bottom: .35rem;
 }
 
-.post-card:hover {
-  transform: translateY(-4px);
+.post-card h3 {
+  margin: .3rem 0 .5rem;
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  line-height: 1.25;
 }
 
-.post-card img {
-  border-radius: 6px;
-  margin-bottom: 1rem;
-}
-
-.post-card h2 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.post-card .post-meta {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin-bottom: 0.5rem;
-}
-
-.post-card .tag {
-  background-color: var(--highlight);
-  color: #000;
-  font-weight: bold;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  align-self: flex-start;
-}
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.pagination a {
-  padding: 0.5rem 1rem;
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  color: var(--accent);
+.post-card h3 a {
+  color: var(--text);
   text-decoration: none;
 }
-
-.pagination a:hover {
-  background-color: var(--accent);
-  color: #000;
-}
+.post-card h3 a:hover { color: var(--accent); }

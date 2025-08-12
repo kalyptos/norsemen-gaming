@@ -1,29 +1,16 @@
 {{ define "main" }}
-  <div class="post-grid">
-    {{ range first 6 (where .Site.RegularPages "Type" "post") }}
-      <div class="post-card">
+  <div class="container">
+    <div class="post-grid">
+      {{ range .Paginator.Pages }}
+        {{ partial "post-card.html" . }}
+      {{ end }}
+    </div>
 
-        {{ with .Params.featured_image }}
-          <img src="{{ . | relURL }}" alt="{{ $.Title | default "Post image" }}">
-        {{ end }}
-
-        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-
-        <div class="post-meta">
-          {{ .Date.Format "2. January 2006 kl. 15:04" }}
-          {{ with .Params.author }} | Skrevet av {{ . }}{{ end }}
-        </div>
-
-        <div class="post-meta">
-          {{ with .Params.status }}<strong>Status:</strong> {{ . }}<br>{{ end }}
-          {{ with .Params.utvikler }}<strong>Utvikler:</strong> {{ . }}<br>{{ end }}
-          {{ with .Params.plattform }}<strong>Plattform:</strong> {{ . }}<br>{{ end }}
-          {{ with .Params.crowdfunding }}<strong>Crowdfunding:</strong> {{ . }} 💰<br>{{ end }}
-        </div>
-
-        <a href="{{ .RelPermalink }}" class="read-more">Les mer →</a>
-
-      </div>
+    {{ if gt .Paginator.TotalPages 1 }}
+      <nav class="center" style="margin-top: 2rem;">
+        {{ if .Paginator.HasPrev }}<a class="btn" href="{{ .Paginator.Prev.URL }}">← Nyere</a>{{ end }}
+        {{ if .Paginator.HasNext }}<a class="btn" href="{{ .Paginator.Next.URL }}">Eldre →</a>{{ end }}
+      </nav>
     {{ end }}
   </div>
 {{ end }}

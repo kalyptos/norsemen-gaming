@@ -1,10 +1,10 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-draft: false
-author: "Treorian"
-categories: ["updates"]
+author: "{{ .Site.Params.author }}"
+categories: []
 tags: []
-featured: false
-cover: ""
+featured: ""
+summary: ""
+draft: true
 ---
