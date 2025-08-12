@@ -14,19 +14,19 @@
   <meta property="og:url" content="{{ .Permalink }}" />
 
   {{/* OG/Twitter-bilde: bundle → assets, med Extended-guard */}}
-  {{ with .Params.featured }}
-    {{ $img := or ($.Resources.GetMatch .) (resources.Get (printf "images/%s" .)) }}
-    {{ with $img }}
-      {{ if hugo.IsExtended }}
-        {{ $og := .Fit "1200x630 webp q75" }}
-        <meta property="og:image" content="{{ $og.Permalink }}" />
-        <meta name="twitter:image" content="{{ $og.Permalink }}" />
-      {{ else }}
-        <meta property="og:image" content="{{ .Permalink }}" />
-        <meta name="twitter:image" content="{{ .Permalink }}" />
-      {{ end }}
+{{ with .Params.featured }}
+  {{ $img := or ($.Resources.GetMatch (printf "*%s*" (or . ""))) (resources.Get (printf "images/%s" .)) }}
+  {{ with $img }}
+    {{ if hugo.IsExtended }}
+      {{ $og := .Fit "1200x630 webp q75" }}
+      <meta property="og:image" content="{{ $og.Permalink }}" />
+      <meta name="twitter:image" content="{{ $og.Permalink }}" />
+    {{ else }}
+      <meta property="og:image" content="{{ .Permalink }}" />
+      <meta name="twitter:image" content="{{ .Permalink }}" />
     {{ end }}
   {{ end }}
+{{ end }}
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}" />
