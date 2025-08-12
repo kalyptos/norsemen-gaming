@@ -47,3 +47,29 @@
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }
+
+/* Widgets i sidebar */
+.widget { padding: 1rem; }
+.widget h4 {
+  margin: 0 0 .75rem;
+  font-size: 1rem;
+  color: var(--text);
+}
+.cat-list, .latest-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: .4rem;
+}
+.cat-list a, .latest-list a {
+  text-decoration: none;
+  color: var(--text);
+}
+.cat-list a:hover, .latest-list a:hover { color: var(--accent); }
+.cat-list .count {
+  color: var(--muted);
+  font-size: .85rem;
+  margin-left: .35rem;
+}
+.tag-cloud { display: flex; flex-wrap: wrap; gap: .4rem; }

@@ -1,10 +1,18 @@
 {{ define "main" }}
   <div class="container">
-    <div class="post-grid">
-      {{ $posts := where .Site.RegularPages "Section" "posts" }}
-      {{ range first 6 ($posts.ByDate.Reverse) }}
-        {{ partial "post-card.html" . }}
-      {{ end }}
+    <div class="layout-grid">
+      <section aria-label="Siste innlegg">
+        <div class="post-grid">
+          {{ $posts := where .Site.RegularPages "Section" "posts" }}
+          {{ range first 9 ($posts.ByDate.Reverse) }}
+            {{ partial "post-card.html" . }}
+          {{ end }}
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        {{ partial "sidebar.html" . }}
+      </aside>
     </div>
   </div>
 {{ end }}

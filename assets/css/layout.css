@@ -16,7 +16,6 @@ header {
   z-index: 40;
   backdrop-filter: saturate(140%) blur(8px);
 }
-
 .header-inner {
   display: flex;
   align-items: center;
@@ -24,51 +23,48 @@ header {
   gap: 1rem;
   padding-block: .75rem;
 }
-
 /* Brand */
 .brand { display: inline-flex; align-items: center; gap: .6rem; text-decoration: none; }
 .brand-logo { height: 24px; width: auto; display: block; }
-.brand-text {
-  color: var(--text);
-  font-weight: 800;
-  letter-spacing: .02em;
-  font-size: 1.05rem;
-}
+.brand-text { color: var(--text); font-weight: 800; letter-spacing: .02em; font-size: 1.05rem; }
 
 /* Nav */
 .nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: .25rem;
-  align-items: center;
-  flex-wrap: wrap;
+  list-style: none; padding: 0; margin: 0;
+  display: flex; gap: .25rem; align-items: center; flex-wrap: wrap;
 }
 .nav li { margin: 0; padding: 0; }
-
 .nav a {
   color: var(--muted);
   text-decoration: none;
   padding: .55rem .8rem;
   border-radius: 10px;
   transition: background .18s ease, color .18s ease;
-  display: inline-block;
-  line-height: 1;
+  display: inline-block; line-height: 1;
 }
-
-.nav a:hover,
-.nav a[aria-current="page"] {
-  color: #000;
-  background: var(--accent);
-}
+.nav a:hover, .nav a[aria-current="page"] { color: #000; background: var(--accent); }
 
 /* Main spacing */
 main { padding-block: clamp(1.5rem, 3vw, 2.5rem); }
+
+/* To-kolonne layout for forsiden */
+.layout-grid {
+  display: grid;
+  grid-template-columns: 1fr minmax(260px, 320px);
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  align-items: start;
+}
+.sidebar { position: sticky; top: 76px; align-self: start; display: grid; gap: 1rem; }
 
 /* Footer */
 footer {
   border-top: 1px solid var(--border);
   color: var(--muted);
   padding-block: 2rem;
+}
+
+/* Responsiv: enkel kolonne på små skjermer */
+@media (max-width: 900px) {
+  .layout-grid { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
 }

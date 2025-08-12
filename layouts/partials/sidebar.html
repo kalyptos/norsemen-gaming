@@ -1,0 +1,49 @@
+<!-- layouts/partials/sidebar.html -->
+<div class="card widget">
+  <h4>Kategorier</h4>
+  <ul class="cat-list">
+    {{/* Bygg liste og sorter på antall innlegg */}}
+    {{ $cats := .Site.Taxonomies.categories }}
+    {{ $list := slice }}
+    {{ range $name, $pages := $cats }}
+      {{ $list = $list | append (dict "name" $name "count" (len $pages)) }}
+    {{ end }}
+    {{ range first 12 (sort $list "count" "desc") }}
+      <li>
+        <a href="{{ (print "/categories/" (.name | urlize) "/") | relURL }}">
+          {{ .name }} <span class="count">{{ .count }}</span>
+        </a>
+      </li>
+    {{ else }}
+      <li class="muted">Ingen kategorier ennå.</li>
+    {{ end }}
+  </ul>
+</div>
+
+<div class="card widget">
+  <h4>Siste innlegg</h4>
+  <ul class="latest-list">
+    {{ $latest := (where .Site.RegularPages "Section" "posts").ByDate.Reverse }}
+    {{ range first 6 $latest }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ else }}
+      <li class="muted">Ingen innlegg ennå.</li>
+    {{ end }}
+  </ul>
+</div>
+
+{{/* Valgfritt: Tags (comment ut hvis du ikke bruker) */}}
+{{ with .Site.Taxonomies.tags }}
+<div class="card widget">
+  <h4>Tags</h4>
+  <div class="tag-cloud">
+    {{ $list := slice }}
+    {{ range $name, $pages := . }}
+      {{ $list = $list | append (dict "name" $name "count" (len $pages)) }}
+    {{ end }}
+    {{ range first 20 (sort $list "count" "desc") }}
+      <a class="tag" href="{{ (print "/tags/" (.name | urlize) "/") | relURL }}">{{ .name }}</a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
