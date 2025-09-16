@@ -7,8 +7,7 @@ author: "Treorian"
 type: "post"
 description: "Hello Games fortsetter å levere gratis content til No Man's Sky med Worlds update. Hva er nytt i det uendelige universet?"
 tags: ["no-mans-sky", "worlds-update", "space-exploration", "hello-games", "free-dlc"]
-categories: ["Space-sim", "Updates"]
-featured_image: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=800"
+categories: ["No Man Sky"]
 ---
 
 **Release:** Juli 2024 (gratis update!)  
