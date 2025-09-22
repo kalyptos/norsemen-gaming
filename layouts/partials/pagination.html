@@ -1,0 +1,50 @@
+{{/* Norsemen – Pagination (I-CARD style, compatible with Hugo Pager) */}}
+{{- $p := .Paginator -}}
+{{- if gt $p.TotalPages 1 -}}
+<nav class="pager" aria-label="Pagination">
+  <ul class="pager-list">
+    {{ if $p.HasPrev }}
+      <li><a class="pager-link" href="{{ $p.First.URL }}" aria-label="Første">««</a></li>
+      <li><a class="pager-link" href="{{ $p.Prev.URL }}" aria-label="Forrige">«</a></li>
+    {{ else }}
+      <li><span class="pager-link is-disabled">««</span></li>
+      <li><span class="pager-link is-disabled">«</span></li>
+    {{ end }}
+
+    {{/* vindu rundt aktiv side */}}
+    {{ $window := 2 }}
+    {{ $from := sub $p.PageNumber $window }} {{ if lt $from 1 }}{{ $from = 1 }}{{ end }}
+    {{ $to := add $p.PageNumber $window }}   {{ if gt $to $p.TotalPages }}{{ $to = $p.TotalPages }}{{ end }}
+
+    {{ if gt $from 1 }}
+      <li><a class="pager-link" href="{{ $p.First.URL }}">1</a></li>
+      {{ if gt $from 2 }}<li><span class="pager-ellipsis">…</span></li>{{ end }}
+    {{ end }}
+
+    {{ range $pager := $p.Pagers }}
+      {{ $n := $pager.PageNumber }}
+      {{ if and (ge $n $from) (le $n $to) }}
+        {{ if eq $n $p.PageNumber }}
+          <li><span class="pager-link is-active">{{ $n }}</span></li>
+        {{ else }}
+          <li><a class="pager-link" href="{{ $pager.URL }}">{{ $n }}</a></li>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{ if lt $to $p.TotalPages }}
+      {{ if lt $to (sub $p.TotalPages 1) }}<li><span class="pager-ellipsis">…</span></li>{{ end }}
+      {{ $last := index $p.Pagers (sub $p.TotalPages 1) }}
+      <li><a class="pager-link" href="{{ $last.URL }}">{{ $p.TotalPages }}</a></li>
+    {{ end }}
+
+    {{ if $p.HasNext }}
+      <li><a class="pager-link" href="{{ $p.Next.URL }}" aria-label="Neste">»</a></li>
+      <li><a class="pager-link" href="{{ $p.Last.URL }}" aria-label="Siste">»»</a></li>
+    {{ else }}
+      <li><span class="pager-link is-disabled">»</span></li>
+      <li><span class="pager-link is-disabled">»»</span></li>
+    {{ end }}
+  </ul>
+</nav>
+{{- end -}}

@@ -1,11 +1,10 @@
 /* base.css – typografi, lenker, bilder, utilities */
-
 a { color: var(--accent); }
 a:hover { color: var(--accent-hover); }
 
 img {
   max-width: 100%;
-  border-radius: 6px;
+  border-radius: 6px;   /* overstyres for kortbilde i components.css */
   display: block;
 }
 
@@ -22,7 +21,10 @@ code, pre {
 }
 
 pre { padding: 1rem; overflow-x: auto; }
-code { padding: .15rem .35rem; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+code {
+  padding: .15rem .35rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
 
 /* Utilities */
 .muted { color: var(--muted); }

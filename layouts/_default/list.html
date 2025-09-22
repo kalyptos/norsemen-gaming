@@ -1,16 +1,26 @@
 {{ define "main" }}
-  <div class="container">
-    <div class="post-grid">
-      {{ range .Paginator.Pages }}
-        {{ partial "post-card.html" . }}
-      {{ end }}
-    </div>
+  {{/* Start fra aktuelle konteksts sider (seksjon / kategori / tagg) */}}
+  {{ $ctxPages := .Pages }}
 
-    {{ if gt .Paginator.TotalPages 1 }}
-      <nav class="center" style="margin-top: 2rem;">
-        {{ if .Paginator.HasPrev }}<a class="btn" href="{{ .Paginator.Prev.URL }}">← Nyere</a>{{ end }}
-        {{ if .Paginator.HasNext }}<a class="btn" href="{{ .Paginator.Next.URL }}">Eldre →</a>{{ end }}
-      </nav>
+  {{/* Behold bare vanlige artikler (ikke seksjoner/term-sider) */}}
+  {{ $onlyPages := where $ctxPages "Kind" "page" }}
+
+  {{/* Og kun de som faktisk ligger i posts-seksjonen */}}
+  {{ $onlyPosts := where $onlyPages "Section" "posts" }}
+
+  {{/* Filtrer bort alt uten gyldig dato (slipper 0001-01-01) */}}
+  {{ $dated := where $onlyPosts "Date.Unix" ">" 0 }}
+
+  {{/* (Valgfritt) ekskluder tom tittel – defensiv guard */}}
+  {{ $pages := where $dated "Title" "!=" "" }}
+
+  {{ $p := .Paginate $pages }}
+
+  <div class="post-grid">
+    {{ range $p.Pages }}
+      {{ partial "post-card.html" . }}
     {{ end }}
   </div>
+
+  {{ partial "pagination.html" (dict "Paginator" $p) }}
 {{ end }}

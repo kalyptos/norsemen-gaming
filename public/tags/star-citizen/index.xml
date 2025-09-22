@@ -1,15 +1,77 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Star-Citizen on Norsemen Gaming</title><link>http://localhost:1313/tags/star-citizen/</link><description>Recent content in Star-Citizen on Norsemen Gaming</description><generator>Hugo</generator><language>no</language><lastBuildDate>Thu, 07 Aug 2025 14:00:00 +0200</lastBuildDate><atom:link href="http://localhost:1313/tags/star-citizen/index.xml" rel="self" type="application/rss+xml"/><item><title>Star Citizen – Rommet venter fortsatt på oss</title><link>http://localhost:1313/posts/star-citizen-rommet-venter-fortsatt-p%C3%A5-oss/</link><pubDate>Thu, 07 Aug 2025 14:00:00 +0200</pubDate><guid>http://localhost:1313/posts/star-citizen-rommet-venter-fortsatt-p%C3%A5-oss/</guid><description>&lt;p>&lt;strong>Status:&lt;/strong> Alpha 3.24&lt;br>
-&lt;strong>Utvikler:&lt;/strong> Cloud Imperium Games&lt;br>
-&lt;strong>Plattform:&lt;/strong> PC&lt;br>
-&lt;strong>Crowdfunding:&lt;/strong> Over $700 millioner 💰&lt;/p>
-&lt;p>Etter mer enn et tiår i utvikling og rekordhøy crowdfunding, begynner &lt;strong>Star Citizen&lt;/strong> endelig å ligne på det spillet Chris Roberts lovet tilbake i 2012.&lt;/p>
-&lt;h2 id="hvor-står-prosjektet-nå">Hvor står prosjektet nå?&lt;/h2>
-&lt;p>&lt;strong>Alpha 3.24&lt;/strong> har introdusert flere store steg:&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Persistent Universe&lt;/strong> med utvidelser og mer å gjøre mellom stasjoner og planeter&lt;/li>
-&lt;li>&lt;strong>Dynamic weather&lt;/strong> på planetene&lt;/li>
-&lt;li>&lt;strong>Forbedret ship combat&lt;/strong> med bedre fysikk&lt;/li>
-&lt;li>&lt;strong>Engineering-gameplay&lt;/strong> – reparer og vedlikehold skip i sanntid&lt;/li>
-&lt;li>&lt;strong>Medical-gameplay&lt;/strong> – heal/ revive lagkamerater&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Mest imponerende:&lt;/strong> Du kan fly sømløst fra romstasjoner ned til planeter, utforske byer, ta oppdrag – alt uten loading screens.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Star-Citizen on Norsemen Gaming</title><link>http://localhost:1313/tags/star-citizen/</link><description>Recent content in Star-Citizen on Norsemen Gaming</description><generator>Hugo</generator><language>no</language><lastBuildDate>Wed, 10 Sep 2025 12:00:00 +0200</lastBuildDate><atom:link href="http://localhost:1313/tags/star-citizen/index.xml" rel="self" type="application/rss+xml"/><item><title>Roadmap Roundup – 4.3.1 Release Notes (10 Sep 2025)</title><link>http://localhost:1313/posts/roadmap-roundup-4.3.1-release-notes-10-sep-2025/</link><pubDate>Wed, 10 Sep 2025 12:00:00 +0200</pubDate><guid>http://localhost:1313/posts/roadmap-roundup-4.3.1-release-notes-10-sep-2025/</guid><description>&lt;p&gt;&lt;strong&gt;Release:&lt;/strong&gt; 4.3.1 (10 Sep 2025)&lt;br&gt;
+&lt;strong&gt;Utvikler:&lt;/strong&gt; Cloud Imperium Games&lt;br&gt;
+&lt;strong&gt;Plattform:&lt;/strong&gt; PC, Xbox Series X/S, PlayStation 5, Switch&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="431--høydepunkter-fra-oppdateringen"&gt;4.3.1 – Høydepunkter fra oppdateringen&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Feature&lt;/th&gt;
+ &lt;th&gt;Versjon&lt;/th&gt;
+ &lt;th&gt;Status&lt;/th&gt;
+ &lt;th&gt;Kommentar&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Medisin‑loop&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;4.3.1&lt;/td&gt;
+ &lt;td&gt;• MedGel‑respawn • Flere behandlingslag&lt;/td&gt;
+ &lt;td&gt;Mer strategisk helbredelse i kamp&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Roberts Space Industries (RSI)&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;4.3.1&lt;/td&gt;
+ &lt;td&gt;• Apollo‑triage • Medivac med nytt våpen&lt;/td&gt;
+ &lt;td&gt;RSI‑teknologi gir nye våpen og helsesystemer&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Onyx Facilities&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;4.3.1&lt;/td&gt;
+ &lt;td&gt;• Site‑B • Dr. Jorrits lab&lt;/td&gt;
+ &lt;td&gt;Nye oppdrag og hemmelige rom&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;NPC Dropships i Pyro&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;4.3.1&lt;/td&gt;
+ &lt;td&gt;• Forsvar og støtte&lt;/td&gt;
+ &lt;td&gt;Dynamiske kampøyner&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Heavy Utility Armor &amp;amp; VOLT LMG&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;4.3.1&lt;/td&gt;
+ &lt;td&gt;• New weapons &amp;amp; armor&lt;/td&gt;
+ &lt;td&gt;Heat‑based mekanikk og all‑round posisjon&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Behring Laser Cannon Refactors&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;4.3.1&lt;/td&gt;
+ &lt;td&gt;• Visuell og teknisk oppdatering&lt;/td&gt;
+ &lt;td&gt;Balanse og gameplay forbedret&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;Mission Pickup on Location&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;4.3.1&lt;/td&gt;
+ &lt;td&gt;• Utsett (Postponed)&lt;/td&gt;
+ &lt;td&gt;Planlagt nye oppdrag senere&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id="-hva-betyr-dette-for-deg"&gt;🎯 Hva betyr dette for deg?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Dypere medisin‑loop&lt;/strong&gt;&lt;br&gt;
+MedGel og respawn‑mekanismen gjør helbredelse mer strategisk – du kan velge å forbli i kamp eller trekke deg for å få behandling, med flere lag av behandling å velge mellom.&lt;/p&gt;</description></item><item><title>Star Citizen – Rommet venter fortsatt på oss</title><link>http://localhost:1313/posts/star-citizen-rommet-venter-fortsatt-p%C3%A5-oss/</link><pubDate>Thu, 07 Aug 2025 14:00:00 +0200</pubDate><guid>http://localhost:1313/posts/star-citizen-rommet-venter-fortsatt-p%C3%A5-oss/</guid><description>&lt;p&gt;&lt;strong&gt;Status:&lt;/strong&gt; Alpha 3.24&lt;br&gt;
+&lt;strong&gt;Utvikler:&lt;/strong&gt; Cloud Imperium Games&lt;br&gt;
+&lt;strong&gt;Plattform:&lt;/strong&gt; PC&lt;br&gt;
+&lt;strong&gt;Crowdfunding:&lt;/strong&gt; Over $700 millioner 💰&lt;/p&gt;
+&lt;p&gt;Etter mer enn et tiår i utvikling og rekordhøy crowdfunding, begynner &lt;strong&gt;Star Citizen&lt;/strong&gt; endelig å ligne på det spillet Chris Roberts lovet tilbake i 2012.&lt;/p&gt;
+&lt;h2 id="hvor-står-prosjektet-nå"&gt;Hvor står prosjektet nå?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Alpha 3.24&lt;/strong&gt; har introdusert flere store steg:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Persistent Universe&lt;/strong&gt; med utvidelser og mer å gjøre mellom stasjoner og planeter&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dynamic weather&lt;/strong&gt; på planetene&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Forbedret ship combat&lt;/strong&gt; med bedre fysikk&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Engineering-gameplay&lt;/strong&gt; – reparer og vedlikehold skip i sanntid&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Medical-gameplay&lt;/strong&gt; – heal/ revive lagkamerater&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Mest imponerende:&lt;/strong&gt; Du kan fly sømløst fra romstasjoner ned til planeter, utforske byer, ta oppdrag – alt uten loading screens.&lt;/p&gt;</description></item></channel></rss>

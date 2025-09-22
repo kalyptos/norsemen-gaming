@@ -1,47 +1,33 @@
 /* blog.css – grid og post-kort */
 
-/* Grid */
 .post-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-  gap: clamp(1rem, 2vw, 1.25rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: var(--grid-gap);
+  align-items: stretch;
 }
+.post-grid > * { height: 100%; }
 
-/* Post card */
+/* Kortlayout */
+.post-card { display: flex; flex-direction: column; }
+.post-card .content { display: flex; flex-direction: column; gap: .6rem; flex: 1; }
+
+/* Bilde i toppen av kortet */
 .post-card .thumb {
   aspect-ratio: 16/9;
   width: 100%;
   object-fit: cover;
   display: block;
 }
-.post-card .content { padding: 1rem; }
 
-.post-card .meta {
-  color: var(--muted);
-  font-size: .9rem;
-  margin-bottom: .35rem;
-}
-
-.post-card h3 {
-  margin: .3rem 0 .5rem;
-  font-size: clamp(1.05rem, 2vw, 1.2rem);
-  line-height: 1.25;
-}
-
-.post-card h3 a {
-  color: var(--text);
-  text-decoration: none;
-}
+/* Meta + tittel */
+.post-card .meta { color: var(--muted); font-size: .9rem; margin-bottom: .35rem; }
+.post-card h3 { margin: .3rem 0 .5rem; font-size: clamp(1.05rem, 2vw, 1.2rem); line-height: 1.25; }
+.post-card h3 a { color: var(--text); text-decoration: none; }
 .post-card h3 a:hover { color: var(--accent); }
 
-/* Strekk alle cards likt i gridet */
-.post-grid { align-items: stretch; }
-.post-grid > * { height: 100%; }
-
-/* Gjør kortet fleksibelt og pin "Les mer" i bunn */
-.post-card { display: flex; flex-direction: column; }
-.post-card .content { display: flex; flex-direction: column; gap: .6rem; flex: 1; }
-.post-card .btn { margin-top: auto; align-self: flex-start; }
+/* Les-mer knapp pin i bunn */
+.post-card .btn-read { margin-top: auto; align-self: flex-start; }
 
 /* Klipp sammendrag til 3 linjer for jevn høyde */
 .post-card p {
@@ -52,5 +38,9 @@
   overflow: hidden;
 }
 
-/* (Valgfritt) liten minimumshøyde for ekstra jevnhet */
+/* Universelle line-clamps (for tittel mm.) */
+.line-clamp-2{ display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.line-clamp-3{ display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+
+/* (Valgfritt) minimumshøyde */
 .post-card { min-height: clamp(260px, 30vw, 340px); }

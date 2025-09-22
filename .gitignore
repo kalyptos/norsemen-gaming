@@ -1,0 +1,27 @@
+# --- Hugo build output
+/public/
+resources/_gen/
+.hugo_build.lock
+
+# --- Node / tooling (hvis aktuelt)
+node_modules/
+.pnpm-store/
+.yarn/
+dist/
+.cache/
+.parcel-cache/
+.vite/
+coverage/
+
+# --- Editor/OS-rot
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+*.tmp
+*.swp
+
+# --- Miljø/hemmeligheter
+.env
+.env.*

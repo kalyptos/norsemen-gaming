@@ -1,48 +1,68 @@
-{{/* layouts/partials/post-card.html */}}
+{{/* Post Card – robust bildehåndtering (Resource | URL | Fallback) */}}
+{{- $page := . -}}
+{{- $cat := (index $page.Params.categories 0) | default "Ukategorisert" -}}
 
-{{/* 1) featured i bundle → 2) assets/images → 3) første bilde i posten */}}
-{{ $img := .Resources.GetMatch (printf "*%s*" (or .Params.featured "")) }}
+{{/* 1) feature.jpg i bundle  2) .Params.featured_image (URL/sti)  3) fallback (assets eller static) */}}
+{{- $imgRes := $page.Resources.GetMatch (or $page.Params.featured_image "feature*") -}}
+{{- $imgURL := "" -}}
+{{- if $imgRes -}}
+  {{- $imgURL = $imgRes.RelPermalink -}}
+{{- else if $page.Params.featured_image -}}
+  {{- /* tillat både absolutte og relative stier */ -}}
+  {{- $imgURL = ($page.Params.featured_image | relURL) -}}
+{{- else -}}
+  {{- $fallbackRes := resources.Get "img/feature-default.jpg" -}}
+  {{- if $fallbackRes -}}
+    {{- $imgURL = $fallbackRes.RelPermalink -}}
+  {{- else -}}
+    {{- /* siste utvei: fil i /static/img/feature-default.jpg */ -}}
+    {{- $imgURL = ("/img/feature-default.jpg" | relURL) -}}
+  {{- end -}}
+{{- end -}}
 
-{{ if not $img }}
-  {{ with .Params.featured }}
-    {{ with resources.Get (printf "images/%s" .) }}
-      {{ $img = . }}
-    {{ end }}
-  {{ end }}
-{{ end }}
+<article class="post-card">
+  <a href="{{ $page.Permalink }}" aria-label="{{ $page.Title }}">
+    <img
+      class="thumb"
+      loading="lazy" decoding="async" fetchpriority="low"
+      src="{{ $imgURL }}"
+      alt="{{ $page.Title }}">
+  </a>
 
-{{ if not $img }}
-  {{ with .Resources.ByType "image" }}
-    {{ if gt (len .) 0 }}{{ $img = index . 0 }}{{ end }}
-  {{ end }}
-{{ end }}
-
-<article class="card post-card">
-  {{ with $img }}
-    {{ if hugo.IsExtended }}
-      {{ $w400 := .Fit "400x225 webp q75" }}
-      {{ $w800 := .Fit "800x450 webp q75" }}
-      <a href="{{ $.Permalink }}">
-        <img class="thumb"
-             src="{{ $w400.RelPermalink }}"
-             srcset="{{ $w400.RelPermalink }} 400w, {{ $w800.RelPermalink }} 800w"
-             sizes="(max-width: 600px) 90vw, 300px"
-             alt="{{ $.Title }}"
-             loading="lazy" decoding="async" />
-      </a>
-    {{ else }}
-      <a href="{{ $.Permalink }}">
-        <img class="thumb" src="{{ .RelPermalink }}" alt="{{ $.Title }}" loading="lazy" decoding="async" />
-      </a>
-    {{ end }}
-  {{ end }}
-
-  <div class="content">
-    <div class="meta">
-      {{ .Date.Format "2. Jan 2006" }}{{ with .Params.author }} · {{ . }}{{ end }}{{ with .Params.categories }} · {{ delimit . ", " }}{{ end }}
+  <div class="content" style="padding: 1rem;">
+    <div class="mb-3" style="display:flex; align-items:center; justify-content:space-between; gap:.5rem;">
+      <span class="inline-badge">{{ $cat }}</span>
+      <div style="display:flex; gap:.5rem; color: var(--muted);">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-width="1.6" d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-width="1.6" d="M20.8 8.6a5 5 0 0 0-8.1-3.8L12 5l-.7-.2A5 5 0 0 0 3.2 8.6c0 5.8 8.8 9.6 8.8 9.6s8.8-3.8 8.8-9.6z"/></svg>
+      </div>
     </div>
-    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-    <p>{{ .Summary | plainify | truncate 140 }}</p>
-    <a class="btn" href="{{ .Permalink }}">Les mer</a>
+
+    <h3 class="title line-clamp-2" style="margin:.2rem 0 .4rem;">
+      <a href="{{ $page.Permalink }}">{{ $page.Title }}</a>
+    </h3>
+
+    {{ with $page.Params.description }}
+      <p class="desc line-clamp-3">{{ . }}</p>
+    {{ end }}
+
+    <hr class="post-card__hr" style="border:0; height:1px; background:var(--border); margin:14px 0;">
+
+    <div style="display:flex; align-items:center; justify-content:space-between;">
+      <div style="display:flex; align-items:center; gap:.75rem;">
+        {{- $avatarRes := resources.Get "img/avatar-default.jpg" -}}
+        {{- $avatarURL := or $page.Params.author_image ($avatarRes | relURL) -}}
+        <img src="{{ $avatarURL }}" alt="{{ $page.Params.author | default "Treorian" }}" style="width:32px;height:32px;border-radius:999px;border:2px solid rgba(255,255,255,.08);object-fit:cover;">
+        <div style="font-size:13px; line-height:1.1;">
+          <div style="color:var(--text); font-weight:700;">{{ $page.Params.author | default "Treorian" }}</div>
+          <div style="color:var(--muted);">{{ $page.Date | time.Format "02. Jan 2006" }}</div>
+        </div>
+      </div>
+
+      <a class="btn-read" href="{{ $page.Permalink }}">
+        Les full artikkel
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path stroke="currentColor" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
   </div>
 </article>

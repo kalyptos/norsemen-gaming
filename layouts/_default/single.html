@@ -9,18 +9,9 @@
     </p>
   </header>
 
-  {{/* Featured-bilde: bundle → assets */}}
- {{ with .Params.featured }}
-  {{ $img := or ($.Resources.GetMatch (printf "*%s*" (or . ""))) (resources.Get (printf "images/%s" .)) }}
-  {{ with $img }}
-    {{ if hugo.IsExtended }}
-      {{ $full := .Fit "1200x675 webp q75" }}
-      <img class="thumb" src="{{ $full.RelPermalink }}" alt="{{ $.Title }}" loading="lazy" decoding="async" />
-    {{ else }}
-      <img class="thumb" src="{{ .RelPermalink }}" alt="{{ $.Title }}" loading="lazy" decoding="async" />
-    {{ end }}
+  {{ with .Params.featured_image }}
+    <img class="thumb" src="{{ . | absURL }}" alt="{{ $.Title }}" loading="lazy" decoding="async" />
   {{ end }}
-{{ end }}
 
   <div class="content">
     {{ .Content }}
