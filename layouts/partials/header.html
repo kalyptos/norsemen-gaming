@@ -27,5 +27,13 @@
         {{ end }}
       </ul>
     </nav>
+
+    {{/* Search component */}}
+    {{ partial "search.html" . }}
+
+    {{/* Theme toggle */}}
+    <button id="theme-toggle" class="theme-toggle" aria-label="Bytt tema">
+      <span class="theme-icon">🌙</span>
+    </button>
   </div>
 </header>

@@ -1,0 +1,43 @@
+# Git
+.git
+.gitignore
+.github
+.gitattributes
+
+# Build artifacts
+public
+resources
+.hugo_build.lock
+
+# Development
+node_modules
+npm-debug.log
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Documentation
+README.md
+LICENSE
+CHANGELOG.md
+
+# CI/CD
+.gitlab-ci.yml
+.travis.yml
+netlify.toml
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Temporary files
+*.tmp
+*.bak
+*.log

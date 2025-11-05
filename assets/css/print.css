@@ -1,0 +1,141 @@
+/* Print stylesheet for optimized printing */
+@media print {
+  /* Remove unnecessary elements */
+  header,
+  nav,
+  .sidebar,
+  .search-container,
+  .theme-toggle,
+  .social-share,
+  .comments,
+  .newsletter,
+  .related-posts,
+  footer,
+  .reading-progress,
+  button {
+    display: none !important;
+  }
+
+  /* Reset colors for print */
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Page setup */
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 24pt;
+    margin-bottom: 0.5em;
+  }
+
+  h2 {
+    font-size: 18pt;
+    margin-top: 1em;
+    page-break-after: avoid;
+  }
+
+  h3 {
+    font-size: 14pt;
+    page-break-after: avoid;
+  }
+
+  /* Links */
+  a {
+    text-decoration: underline;
+    color: black !important;
+  }
+
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    font-weight: normal;
+  }
+
+  /* Images */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  /* Code blocks */
+  pre,
+  code {
+    border: 1px solid #ccc;
+    page-break-inside: avoid;
+    font-family: "Courier New", monospace;
+    font-size: 10pt;
+  }
+
+  pre {
+    padding: 10px;
+    margin: 1em 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Tables */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    page-break-inside: avoid;
+  }
+
+  th,
+  td {
+    border: 1px solid #ccc;
+    padding: 8px;
+  }
+
+  /* Page breaks */
+  article {
+    page-break-inside: avoid;
+  }
+
+  blockquote {
+    page-break-inside: avoid;
+    border-left: 4px solid #ccc;
+    padding-left: 1em;
+    margin: 1em 0;
+  }
+
+  /* Post meta */
+  .post-meta {
+    font-size: 10pt;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #ccc;
+  }
+
+  /* Table of contents */
+  .toc {
+    page-break-inside: avoid;
+    border: 1px solid #ccc;
+    padding: 1em;
+    margin: 1em 0;
+  }
+
+  .toc ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .toc li {
+    margin: 0.5em 0;
+  }
+
+  /* Avoid orphans and widows */
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+}

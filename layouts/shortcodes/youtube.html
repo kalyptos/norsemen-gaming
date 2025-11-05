@@ -1,0 +1,20 @@
+{{/*
+  YouTube embed shortcode
+  Usage: {{< youtube id="VIDEO_ID" >}}
+  or: {{< youtube "VIDEO_ID" >}}
+*/}}
+{{ $id := .Get "id" | default (.Get 0) }}
+{{ if $id }}
+<div class="video-embed">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/{{ $id }}"
+    title="YouTube video"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+    loading="lazy"
+  ></iframe>
+</div>
+{{ else }}
+  <p class="error">YouTube video ID is required</p>
+{{ end }}

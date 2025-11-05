@@ -1,0 +1,39 @@
+{{/*
+  Giscus comments system powered by GitHub Discussions
+
+  To enable comments:
+  1. Go to https://giscus.app/
+  2. Follow setup instructions (requires GitHub repo with Discussions enabled)
+  3. Add these params to hugo.toml:
+
+  [params.giscus]
+    repo = "your-username/your-repo"
+    repoId = "your-repo-id"
+    category = "General"
+    categoryId = "your-category-id"
+    mapping = "pathname"
+    theme = "dark"
+    lang = "no"
+*/}}
+
+{{ if .Site.Params.giscus.repo }}
+<section class="comments">
+  <h2>Kommentarer</h2>
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="{{ .Site.Params.giscus.repo }}"
+    data-repo-id="{{ .Site.Params.giscus.repoId }}"
+    data-category="{{ default "General" .Site.Params.giscus.category }}"
+    data-category-id="{{ .Site.Params.giscus.categoryId }}"
+    data-mapping="{{ default "pathname" .Site.Params.giscus.mapping }}"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="{{ default "dark" .Site.Params.giscus.theme }}"
+    data-lang="{{ default "no" .Site.Params.giscus.lang }}"
+    crossorigin="anonymous"
+    async>
+  </script>
+</section>
+{{ end }}

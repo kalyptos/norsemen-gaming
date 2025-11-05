@@ -1,0 +1,31 @@
+{{/*
+  Twitch embed shortcode
+  Usage: {{< twitch channel="CHANNEL_NAME" >}}
+  or: {{< twitch video="VIDEO_ID" >}}
+*/}}
+{{ $channel := .Get "channel" }}
+{{ $video := .Get "video" }}
+
+<div class="video-embed">
+  {{ if $channel }}
+    <iframe
+      src="https://player.twitch.tv/?channel={{ $channel }}&parent={{ site.BaseURL | replaceRE "^https?://([^/]+).*" "$1" }}"
+      title="Twitch stream"
+      frameborder="0"
+      allowfullscreen
+      scrolling="no"
+      loading="lazy"
+    ></iframe>
+  {{ else if $video }}
+    <iframe
+      src="https://player.twitch.tv/?video={{ $video }}&parent={{ site.BaseURL | replaceRE "^https?://([^/]+).*" "$1" }}"
+      title="Twitch video"
+      frameborder="0"
+      allowfullscreen
+      scrolling="no"
+      loading="lazy"
+    ></iframe>
+  {{ else }}
+    <p class="error">Twitch channel or video ID is required</p>
+  {{ end }}
+</div>

@@ -1,20 +1,57 @@
 {{ define "main" }}
-<article class="container">
-  <header style="margin-bottom: 1.25rem;">
+{{/* Reading progress bar */}}
+<div class="reading-progress" id="reading-progress"></div>
+
+<article class="container post-single">
+  {{/* Breadcrumb navigation */}}
+  {{ partial "breadcrumb.html" . }}
+
+  <header class="post-header">
     <h1>{{ .Title }}</h1>
-    <p class="meta muted">
-      {{ .Date.Format "2. Jan 2006" }}
-      {{ with .Params.author }} · {{ . }}{{ end }}
-      {{ with .Params.categories }} · {{ delimit . ", " }}{{ end }}
-    </p>
+    <div class="post-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2. Jan 2006" }}</time>
+      {{ with .Params.author }} · <span class="author">{{ . }}</span>{{ end }}
+      {{ with .Params.categories }} · <span class="categories">{{ delimit . ", " }}</span>{{ end }}
+      · <span class="reading-time">{{ math.Round (div (countwords .Content) 200.0) }} min lesing</span>
+    </div>
   </header>
 
   {{ with .Params.featured_image }}
-    <img class="thumb" src="{{ . | absURL }}" alt="{{ $.Title }}" loading="lazy" decoding="async" />
+    <img class="post-featured-image" src="{{ . | absURL }}" alt="{{ $.Title }}" loading="lazy" decoding="async" />
   {{ end }}
 
-  <div class="content">
+  {{/* Table of contents for longer articles */}}
+  {{ if gt (len .TableOfContents) 100 }}
+    <aside class="toc">
+      <h2>Innhold</h2>
+      {{ .TableOfContents }}
+    </aside>
+  {{ end }}
+
+  <div class="post-content">
     {{ .Content }}
   </div>
+
+  {{/* Tags */}}
+  {{ with .Params.tags }}
+    <div class="post-tags">
+      {{ range . }}
+        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="tag">{{ . }}</a>
+      {{ end }}
+    </div>
+  {{ end }}
+
+  {{/* Social share buttons */}}
+  {{ partial "social-share.html" . }}
+
+  {{/* Related posts */}}
+  {{ partial "related-posts.html" . }}
+
+  {{/* Comments */}}
+  {{ partial "comments.html" . }}
 </article>
+
+{{/* Reading progress script */}}
+{{ $progress := resources.Get "js/reading-progress.js" | minify | fingerprint }}
+<script src="{{ $progress.RelPermalink }}" integrity="{{ $progress.Data.Integrity }}" defer></script>
 {{ end }}
