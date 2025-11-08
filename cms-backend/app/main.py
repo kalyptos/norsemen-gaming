@@ -50,9 +50,15 @@ async def root(request: Request):
     )
 
 
+@app.get("/health")
+async def health():
+    """Simple health check for Docker/Coolify"""
+    return {"status": "healthy"}
+
+
 @app.get("/api/health")
 async def health_check():
-    """Health check endpoint"""
+    """Detailed health check endpoint"""
     return {
         "status": "healthy",
         "app": settings.app_name,

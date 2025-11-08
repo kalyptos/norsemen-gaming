@@ -1,0 +1,61 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Hugo
+public/
+resources/_gen/
+.hugo_build.lock
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Docs
+README.md
+CLAUDE.md
+DEPLOYMENT.md
+CMS-SETUP.md
+*.md
+!content/**/*.md
+
+# CI/CD
+.github/
+netlify.toml
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# Backend specific (for frontend builds)
+cms-backend/
+
+# Temporary files
+tmp/
+temp/
+*.tmp

@@ -131,16 +131,51 @@ Content covers: Spacecraft, Star Citizen, No Man's Sky, Crimson Desert, Dune Awa
 
 ## Deployment
 
-**Netlify** is configured as the primary deployment platform:
+### Coolify 4 (Production - Recommended)
+**Primary deployment platform using Docker Compose**:
+- Two-service architecture (Frontend + Backend)
+- Auto-deployment on Git push
+- Environment variable management
+- Built-in SSL/TLS and monitoring
+- **Full guide**: See `DEPLOYMENT.md`
+
+**Services**:
+1. **Frontend** (Hugo + Nginx) - Port 8080
+   - Built from root `Dockerfile`
+   - Multi-stage build (Hugo build + Nginx serve)
+   - Health check endpoint: `/health`
+   - Static asset caching and compression
+
+2. **Backend** (FastAPI CMS) - Port 8000
+   - Built from `cms-backend/Dockerfile`
+   - Git integration (GitHub/Gitea)
+   - Admin UI and REST API
+   - Health check endpoint: `/health`
+
+**Quick Deploy**:
+```bash
+# In Coolify 4:
+# 1. New Resource → Docker Compose
+# 2. Select repo and branch
+# 3. Set environment variables (see .env.example)
+# 4. Deploy
+```
+
+### Netlify (Alternative)
 - Production builds on push to main branch
-- Deploy previews with future-dated content for PR previews
+- Deploy previews with future-dated content
 - Environment variables set in netlify.toml
 - Custom build command with minification and gc
 
-**Docker** support available via Dockerfile:
-- Two-stage build (Hugo build + Nginx serve)
-- Uses klakegg/hugo:ext-alpine for builds
-- Serves from /usr/share/nginx/html on port 80
+### Docker (Local/Manual)
+```bash
+# Full stack with docker-compose
+docker-compose up --build
+
+# Frontend only
+docker build -t norsemen-gaming .
+docker run -p 8080:80 norsemen-gaming
+```
 
 ## Content Management
 

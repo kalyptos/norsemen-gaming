@@ -25,3 +25,4 @@ Thumbs.db
 # --- Miljø/hemmeligheter
 .env
 .env.*
+!.env.example

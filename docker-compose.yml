@@ -1,0 +1,77 @@
+version: '3.9'
+
+services:
+  # Hugo Static Site (Frontend)
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: norsemen-frontend
+    restart: unless-stopped
+    ports:
+      - "${FRONTEND_PORT:-8080}:80"
+    environment:
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - norsemen-network
+
+  # FastAPI Backend (CMS)
+  backend:
+    build:
+      context: ./cms-backend
+      dockerfile: Dockerfile
+    container_name: norsemen-backend
+    restart: unless-stopped
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+    environment:
+      # Security
+      - SECRET_KEY=${SECRET_KEY}
+      - ALGORITHM=${ALGORITHM:-HS256}
+      - ACCESS_TOKEN_EXPIRE_MINUTES=${ACCESS_TOKEN_EXPIRE_MINUTES:-30}
+
+      # Git Integration
+      - GIT_PROVIDER=${GIT_PROVIDER:-github}
+      - GIT_REPO=${GIT_REPO}
+      - GIT_TOKEN=${GIT_TOKEN}
+      - GIT_BRANCH=${GIT_BRANCH:-main}
+
+      # CORS
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS:-http://localhost:8080,https://norsemen.ovh}
+
+      # Admin User
+      - ADMIN_USERNAME=${ADMIN_USERNAME:-admin}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+
+      # Application
+      - DEBUG=${DEBUG:-false}
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+    volumes:
+      - backend-data:/app/data
+      - backend-uploads:/app/static/uploads
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - norsemen-network
+    depends_on:
+      - frontend
+
+volumes:
+  backend-data:
+    driver: local
+  backend-uploads:
+    driver: local
+
+networks:
+  norsemen-network:
+    driver: bridge
