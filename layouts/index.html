@@ -1,8 +1,49 @@
 {{ define "main" }}
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-gradient"></div>
+      <div class="stars"></div>
+    </div>
+
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title animate-fade-in">
+          <span class="gradient-text">Norsemen Gaming</span>
+        </h1>
+        <p class="hero-subtitle animate-fade-in">
+          Nyheter, guider og meninger om spill – fra en norse-gamer
+        </p>
+        <div class="hero-stats animate-fade-in">
+          <div class="stat-item">
+            <span class="stat-number">{{ len (where .Site.RegularPages "Section" "posts") }}</span>
+            <span class="stat-label">Artikler</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">{{ len .Site.Taxonomies.categories }}</span>
+            <span class="stat-label">Kategorier</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Spill</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
   <div class="container">
     <div class="layout-grid">
-      <section aria-label="Siste innlegg">
-        <div class="post-grid">
+      <section class="main-content" aria-label="Siste innlegg">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="gradient-text">Siste artikler</span>
+          </h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="post-grid stagger-children">
           {{ $posts := where .Site.RegularPages "Section" "posts" }}
           {{ range first 9 ($posts.ByDate.Reverse) }}
             {{ partial "post-card.html" . }}
