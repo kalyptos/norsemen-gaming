@@ -13,7 +13,7 @@ summaryLength = 30
   description = 'Nyheter, guider og meninger om spill – fra en norse-gamer.'
   author = 'Norsemen'
   logo = '/images/logo.png'
-  favicon = '/favicon.ico'
+  favicon = '/favicon.svg'
   mainSections = ['posts']
 
 [taxonomies]
