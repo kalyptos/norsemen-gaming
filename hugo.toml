@@ -2,7 +2,7 @@ baseURL = 'https://norsemen.ovh'
 languageCode = 'no'
 title = 'Norsemen Gaming'
 enableRobotsTXT = true
-enableGitInfo = true
+enableGitInfo = false  # Disabled for Docker builds (no .git in container)
 summaryLength = 30
 
 # Pagination settings (replaces deprecated 'paginate' config)
@@ -24,7 +24,7 @@ summaryLength = 30
   posts = '/posts/:title/'
 
 [outputs]
-  home = ['HTML', 'RSS', 'JSON']
+  home = ['HTML', 'RSS']
   section = ['HTML', 'RSS']
 
 [sitemap]
