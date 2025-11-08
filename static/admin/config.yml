@@ -1,0 +1,68 @@
+# Decap CMS Configuration for Norsemen Gaming
+backend:
+  name: github
+  repo: kalyptos/norsemen-gaming  # Change to your repo
+  branch: main  # Change to your main branch
+  base_url: https://norsemen.ovh  # Your site URL
+  auth_endpoint: /api/auth  # Or use Netlify Identity/OAuth
+
+# Alternative for Gitea:
+# backend:
+#   name: gitea
+#   repo: username/norsemen-gaming
+#   branch: main
+#   api_root: https://your-gitea-instance.com/api/v1
+#   app_id: your-oauth-app-id
+
+# Local development mode (skip login)
+local_backend: true
+
+# Media files configuration
+media_folder: "static/images/uploads"  # Where uploaded images go
+public_folder: "/images/uploads"  # How they're referenced in posts
+
+# Collections (content types)
+collections:
+  # Blog Posts
+  - name: "posts"
+    label: "Blogginnlegg"
+    label_singular: "Innlegg"
+    folder: "content/posts"
+    create: true
+    slug: "{{fields.game}}/{{slug}}"  # Creates /content/posts/game-name/post-slug/
+    path: "{{slug}}/index"  # Creates index.md in the folder
+    media_folder: ""  # Store images in same folder as post
+    public_folder: ""
+    preview_path: "posts/{{slug}}"
+    fields:
+      - { label: "Tittel", name: "title", widget: "string", required: true }
+      - { label: "Publiseringsdato", name: "date", widget: "datetime", required: true }
+      - { label: "Forfatter", name: "author", widget: "string", default: "Norsemen" }
+      - { label: "Spill/Kategori", name: "game", widget: "select", options: ["star-citizen", "no-man-sky", "spacecraft", "crimson-desert", "dune-awakening", "space-engineers-2", "jump-space", "light-no-fire", "in-the-black", "free-stars-children-of-infinity", "other"] }
+      - { label: "Kategorier", name: "categories", widget: "list", required: false }
+      - { label: "Tagger", name: "tags", widget: "list", required: false }
+      - { label: "Hovedbilde", name: "featured", widget: "image", required: false, hint: "feature.jpg - lagres i samme mappe som innlegget" }
+      - { label: "Beskrivelse (SEO)", name: "description", widget: "text", required: false }
+      - { label: "Utkast", name: "draft", widget: "boolean", default: true }
+      - { label: "Innhold", name: "body", widget: "markdown", required: true }
+
+  # Pages
+  - name: "pages"
+    label: "Sider"
+    label_singular: "Side"
+    folder: "content"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Tittel", name: "title", widget: "string" }
+      - { label: "Publiseringsdato", name: "date", widget: "datetime" }
+      - { label: "Type", name: "type", widget: "hidden", default: "page" }
+      - { label: "Utkast", name: "draft", widget: "boolean", default: false }
+      - { label: "Innhold", name: "body", widget: "markdown" }
+
+# Editor preferences
+editor:
+  preview: true  # Enable live preview
+
+# Locale
+locale: "no"

@@ -1,20 +1,94 @@
 {{ define "main" }}
-<article class="container">
-  <header style="margin-bottom: 1.25rem;">
+<article class="post-single">
+  <header class="post-header">
     <h1>{{ .Title }}</h1>
-    <p class="meta muted">
-      {{ .Date.Format "2. Jan 2006" }}
-      {{ with .Params.author }} · {{ . }}{{ end }}
-      {{ with .Params.categories }} · {{ delimit . ", " }}{{ end }}
-    </p>
+    <div class="post-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2. Jan 2006" }}</time>
+      {{ with .Params.author }} · <span class="author">{{ . }}</span>{{ end }}
+      {{ with .Params.categories }} · <span class="categories">{{ delimit . ", " }}</span>{{ end }}
+      {{ if gt .WordCount 0 }} · <span class="reading-time">{{ .ReadingTime }} min lesing</span>{{ end }}
+    </div>
   </header>
 
-  {{ with .Params.featured_image }}
-    <img class="thumb" src="{{ . | absURL }}" alt="{{ $.Title }}" loading="lazy" decoding="async" />
+  {{ with .Params.featured }}
+    {{ $img := or ($.Resources.GetMatch .) (resources.Get (printf "images/%s" .)) }}
+    {{ with $img }}
+      <figure class="featured-image">
+        {{ if hugo.IsExtended }}
+          {{ $resized := .Resize "1200x q85" }}
+          <img src="{{ $resized.RelPermalink }}"
+               alt="{{ $.Title }}"
+               width="{{ $resized.Width }}"
+               height="{{ $resized.Height }}"
+               loading="eager"
+               decoding="async" />
+        {{ else }}
+          <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" loading="eager" decoding="async" />
+        {{ end }}
+      </figure>
+    {{ end }}
+  {{ end }}
+
+  {{ if and (gt .WordCount 500) .TableOfContents }}
+  <aside class="toc">
+    <h2>Innhold</h2>
+    {{ .TableOfContents }}
+  </aside>
   {{ end }}
 
   <div class="content">
     {{ .Content }}
   </div>
+
+  {{ with .Params.tags }}
+  <footer class="post-footer">
+    <div class="tags">
+      {{ range . }}
+        <a href="{{ (print "/tags/" (. | urlize) "/") | relURL }}" class="tag">{{ . }}</a>
+      {{ end }}
+    </div>
+  </footer>
+  {{ end }}
+
+  {{/* Related Posts */}}
+  {{ $related := .Site.RegularPages.Related . | first 3 }}
+  {{ with $related }}
+  <section class="related-posts">
+    <h2>Relaterte artikler</h2>
+    <div class="post-grid">
+      {{ range . }}
+        {{ partial "post-card.html" . }}
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{/* Structured Data for SEO */}}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{ .Title }}",
+    "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+    "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ .Params.author | default .Site.Params.author }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ .Site.Title }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ .Site.BaseURL }}{{ .Site.Params.logo }}"
+      }
+    },
+    "description": "{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify }}{{ end }}",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ .Permalink }}"
+    }
+  }
+  </script>
 </article>
 {{ end }}

@@ -4,12 +4,12 @@
     {{ partial "head.html" . }}
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Hopp til hovedinnhold</a>
+
     {{ partial "header.html" . }}
 
-    <main>
-      <div class="container">
-        {{ block "main" . }}{{ end }}
-      </div>
+    <main id="main-content">
+      {{ block "main" . }}{{ end }}
     </main>
 
     {{ partial "footer.html" . }}

@@ -141,3 +141,21 @@ Content covers: Spacecraft, Star Citizen, No Man's Sky, Crimson Desert, Dune Awa
 - Two-stage build (Hugo build + Nginx serve)
 - Uses klakegg/hugo:ext-alpine for builds
 - Serves from /usr/share/nginx/html on port 80
+
+## Content Management
+
+Two CMS options available:
+
+### Decap CMS (Recommended)
+- **Location**: `/static/admin/`
+- **Access**: https://norsemen.ovh/admin/
+- **Features**: Git-based, no backend needed, OAuth authentication
+- **Config**: `/static/admin/config.yml`
+
+### FastAPI Backend (Custom)
+- **Location**: `/cms-backend/`
+- **Access**: http://localhost:8000
+- **Features**: Full API, custom auth, GitHub/Gitea integration
+- **Setup**: See `/cms-backend/README.md`
+
+For full CMS documentation, see `CMS-SETUP.md`
