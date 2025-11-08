@@ -1,10 +1,13 @@
 # Decap CMS Configuration for Norsemen Gaming
 backend:
-  name: github
-  repo: kalyptos/norsemen-gaming  # Change to your repo
-  branch: main  # Change to your main branch
-  base_url: https://norsemen.ovh  # Your site URL
-  auth_endpoint: /api/auth  # Or use Netlify Identity/OAuth
+  name: git-gateway
+  branch: claude/init-project-011CUpmCfJg7VYxyLUEn3UB6
+
+# Alternative GitHub backend (requires OAuth setup):
+# backend:
+#   name: github
+#   repo: kalyptos/norsemen-gaming
+#   branch: claude/init-project-011CUpmCfJg7VYxyLUEn3UB6
 
 # Alternative for Gitea:
 # backend:
@@ -13,9 +16,6 @@ backend:
 #   branch: main
 #   api_root: https://your-gitea-instance.com/api/v1
 #   app_id: your-oauth-app-id
-
-# Local development mode (skip login)
-local_backend: true
 
 # Media files configuration
 media_folder: "static/images/uploads"  # Where uploaded images go
