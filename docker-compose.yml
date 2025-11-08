@@ -6,7 +6,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: norsemen-frontend
     restart: unless-stopped
     ports:
       - "${FRONTEND_PORT:-8080}:80"
@@ -26,7 +25,6 @@ services:
     build:
       context: ./cms-backend
       dockerfile: Dockerfile
-    container_name: norsemen-backend
     restart: unless-stopped
     ports:
       - "${BACKEND_PORT:-8000}:8000"
@@ -40,7 +38,7 @@ services:
       - GIT_PROVIDER=${GIT_PROVIDER:-github}
       - GIT_REPO=${GIT_REPO}
       - GIT_TOKEN=${GIT_TOKEN}
-      - GIT_BRANCH=${GIT_BRANCH:-main}
+      - GIT_BRANCH=${GIT_BRANCH:-claude/init-project-011CUpmCfJg7VYxyLUEn3UB6}
 
       # CORS
       - ALLOWED_ORIGINS=${ALLOWED_ORIGINS:-http://localhost:8080,https://norsemen.ovh}
