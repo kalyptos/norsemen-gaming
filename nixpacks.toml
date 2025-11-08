@@ -1,0 +1,17 @@
+# nixpacks.toml
+[phases.setup]
+# Installer Hugo via Nix
+nixPkgs = ["hugo"]
+
+[phases.install]
+# Ingen ekstra install for Hugo
+cmds = []
+
+[phases.build]
+# Bygg Hugo-siden til /public
+cmds = ["hugo --minify"]
+
+[start]
+# Serve static innhold. Coolify Static Site kan serve selv,
+# men om du kjører som "Application", så kan du bruke en enkel server:
+cmd = "python3 -m http.server 3000 --directory public"
