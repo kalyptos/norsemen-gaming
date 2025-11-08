@@ -1,11 +1,6 @@
 # --- Bygg (Hugo extended) ---
-# Velg en HUGO_VERSION som finnes; 0.137.0 er et trygt eksempel.
-ARG HUGO_VERSION=0.137.0
-FROM docker.io/hugomods/hugo:exts-${HUGO_VERSION} AS build
+FROM docker.io/hugomods/hugo:exts-0.137.0 AS build
 WORKDIR /src
-
-# Hjelper cache hvis du endrer konfig sjeldnere enn innhold
-COPY hugo.toml hugo.yaml config.toml* ./ 2>/dev/null || true
 COPY . .
 ENV HUGO_ENV=production
 RUN hugo --gc --minify
