@@ -74,7 +74,8 @@
   {{ $layout := resources.Get "css/layout.css" }}
   {{ $components := resources.Get "css/components.css" }}
   {{ $blog := resources.Get "css/blog.css" }}
-  {{ $bundle := slice $vars $base $layout $components $blog | resources.Concat "css/app.css" | resources.Minify | fingerprint }}
+  {{ $animations := resources.Get "css/animations.css" }}
+  {{ $bundle := slice $vars $base $layout $components $blog $animations | resources.Concat "css/app.css" | resources.Minify | fingerprint }}
   <link rel="stylesheet" href="{{ $bundle.RelPermalink }}" integrity="{{ $bundle.Data.Integrity }}" crossorigin="anonymous" />
   <link rel="preload" href="{{ $bundle.RelPermalink }}" as="style" />
 </head>

@@ -1,0 +1,125 @@
+/* components.css – kort, knapper, tagger, fokus */
+
+/* Generiske kort/knapp/tag */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-2);
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-1);
+  border-color: color-mix(in oklab, var(--border) 60%, var(--accent));
+}
+
+.btn {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: var(--accent);
+  color: #000;
+  padding: .6rem .9rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .18s ease, transform .1s ease;
+}
+.btn:hover { background: var(--accent-hover); }
+.btn:active { transform: translateY(1px); }
+
+.tag {
+  display: inline-block;
+  padding: .25rem .5rem;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: .85rem;
+}
+
+/* Tastaturfokus */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Reduser bevegelse */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+/* Sidebar-widgets */
+.widget { padding: 1rem; }
+.widget h4 { margin: 0 0 .75rem; font-size: 1rem; color: var(--text); }
+.cat-list, .latest-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; }
+.cat-list a, .latest-list a { text-decoration: none; color: var(--text); }
+.cat-list a:hover, .latest-list a:hover { color: var(--accent); }
+.cat-list .count { color: var(--muted); font-size: .85rem; margin-left: .35rem; }
+.tag-cloud { display: flex; flex-wrap: wrap; gap: .4rem; }
+
+/* === I-CARD stil for bloggkort === */
+.post-card{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-2);
+  overflow: hidden;
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.post-card:hover{
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-1);
+  border-color: color-mix(in oklab, var(--border) 60%, var(--accent));
+}
+
+/* Toppbildet skal være kant-til-kant */
+.post-card > a > img,
+.post-card .thumb { border-radius: 0; }
+
+/* Kategori-badge */
+.badge,
+.post-card .inline-badge{
+  display:inline-flex; align-items:center; gap:.35rem;
+  padding:.38rem .6rem;
+  font: 600 12px/1 var(--font-sans);
+  color:#dfe7ff;
+  background: var(--badge-bg);
+  border:1px solid var(--badge-ring);
+  border-radius:999px;
+}
+
+/* CTA (gul les-mer) */
+.btn-read,
+.post-card .btn-read{
+  display:inline-flex; align-items:center; gap:.5rem;
+  background: var(--cta); color:#111;
+  font-weight:800; font-size:13px;
+  padding:.6rem 1rem;
+  border-radius:999px;
+  box-shadow: 0 2px 0 rgba(0,0,0,.25) inset;
+  transition: background .15s ease, transform .1s ease;
+}
+.btn-read:hover{ background: var(--cta-hover); }
+.btn-read:active{ transform: translateY(1px); }
+
+/* Teksttoner i kortet */
+.post-card .title{ letter-spacing:-.01em; }
+.post-card .desc{ color: var(--muted); }
+/* Pagination – I-CARD */
+.pager{ margin-top:28px; display:flex; justify-content:center; }
+.pager-list{ list-style:none; display:flex; gap:8px; padding:0; margin:0; }
+.pager-link{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width:36px; height:36px; padding:0 12px;
+  border-radius:999px;
+  background:var(--surface-2);
+  border:1px solid var(--border);
+  color:var(--text);
+  text-decoration:none;
+  font-weight:700;
+}
+.pager-link:hover{
+  background: color-mix(in oklab, var(--accent) 15%, var(--surface-2));
+  border-color: color-mix(in oklab, var(--accent) 35%, var(--border));
+}
+.pager-link.is-active{ background:var(--accent); color:#111; border-color:var(--accent); }
+.pager-link.is-disabled{ opacity:.45; cursor:not-allowed; }
+.pager-ellipsis{ display:inline-flex; align-items:center; color:var(--muted); padding:0 8px; }
