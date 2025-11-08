@@ -1,0 +1,20 @@
+{{/*
+  Vimeo embed shortcode
+  Usage: {{< vimeo id="VIDEO_ID" >}}
+  or: {{< vimeo "VIDEO_ID" >}}
+*/}}
+{{ $id := .Get "id" | default (.Get 0) }}
+{{ if $id }}
+<div class="video-embed">
+  <iframe
+    src="https://player.vimeo.com/video/{{ $id }}?dnt=1"
+    title="Vimeo video"
+    frameborder="0"
+    allow="autoplay; fullscreen; picture-in-picture"
+    allowfullscreen
+    loading="lazy"
+  ></iframe>
+</div>
+{{ else }}
+  <p class="error">Vimeo video ID is required</p>
+{{ end }}

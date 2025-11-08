@@ -1,0 +1,33 @@
+{{/* Newsletter signup form using Netlify Forms */}}
+<section class="newsletter">
+  <div class="newsletter-content">
+    <h3>📬 Abonner på nyhetsbrevet</h3>
+    <p>Få de siste oppdateringene om spill direkte i innboksen din!</p>
+
+    <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="newsletter-form">
+      {{/* Hidden fields for Netlify */}}
+      <input type="hidden" name="form-name" value="newsletter" />
+      <p class="hidden">
+        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+      </p>
+
+      <div class="form-group">
+        <input
+          type="email"
+          name="email"
+          placeholder="Din e-postadresse"
+          required
+          aria-label="E-postadresse"
+          class="newsletter-input"
+        />
+        <button type="submit" class="newsletter-button">
+          Abonner
+        </button>
+      </div>
+
+      <p class="newsletter-privacy">
+        Vi respekterer ditt privatliv. Ingen spam, kun gaming-nyheter!
+      </p>
+    </form>
+  </div>
+</section>

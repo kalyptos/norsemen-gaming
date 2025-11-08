@@ -1,0 +1,29 @@
+{{/* Breadcrumb navigation with structured data */}}
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a itemprop="item" href="{{ .Site.BaseURL }}">
+        <span itemprop="name">Hjem</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+
+    {{ if .Section }}
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="{{ .Section | relURL }}">
+          <span itemprop="name">{{ .Section | humanize | title }}</span>
+        </a>
+        <meta itemprop="position" content="2" />
+      </li>
+    {{ end }}
+
+    {{ if not .IsHome }}
+      {{ if not .IsSection }}
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span itemprop="name">{{ .Title }}</span>
+          <meta itemprop="position" content="{{ if .Section }}3{{ else }}2{{ end }}" />
+        </li>
+      {{ end }}
+    {{ end }}
+  </ol>
+</nav>

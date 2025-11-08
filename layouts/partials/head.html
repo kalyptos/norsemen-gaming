@@ -3,6 +3,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  {{/* Critical CSS for above-the-fold content */}}
+  <style>
+    :root{--bg:#0b1220;--surface:#121a2b;--text:#e2e8f0;--text-dim:#9ca3b8;--accent:#8aa4ff;--accent-dim:#6b84d9;--cta:#ffd24d;--border:#1e2a3f;--shadow:0 2px 8px rgba(0,0,0,.3);--shadow-lg:0 8px 24px rgba(0,0,0,.4);--radius:18px;--font-sans:ui-sans-serif,Inter,system-ui,-apple-system,sans-serif;--font-mono:ui-monospace,monospace;}
+    *,::before,::after{box-sizing:border-box;}
+    body{margin:0;font-family:var(--font-sans);background:var(--bg);color:var(--text);line-height:1.6;}
+    header{background:var(--surface);position:sticky;top:0;z-index:100;box-shadow:var(--shadow);}
+    .container{max-width:1400px;margin:0 auto;padding:0 1rem;}
+  </style>
+
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Summary }}{{ . | plainify | truncate 160 }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
   <link rel="canonical" href="{{ .Permalink }}" />
@@ -18,9 +27,12 @@
   {{ $img := or ($.Resources.GetMatch (printf "*%s*" (or . ""))) (resources.Get (printf "images/%s" .)) }}
   {{ with $img }}
     {{ if hugo.IsExtended }}
-      {{ $og := .Fit "1200x630 webp q75" }}
-      <meta property="og:image" content="{{ $og.Permalink }}" />
-      <meta name="twitter:image" content="{{ $og.Permalink }}" />
+      {{ $webp := .Fit "1200x630 webp q85" }}
+      {{ $avif := .Fit "1200x630 avif q85" }}
+      <meta property="og:image" content="{{ $webp.Permalink }}" />
+      <meta name="twitter:image" content="{{ $webp.Permalink }}" />
+      <link rel="preload" as="image" type="image/avif" href="{{ $avif.Permalink }}" />
+      <link rel="preload" as="image" type="image/webp" href="{{ $webp.Permalink }}" />
     {{ else }}
       <meta property="og:image" content="{{ .Permalink }}" />
       <meta name="twitter:image" content="{{ .Permalink }}" />
@@ -38,6 +50,15 @@
   {{ $layout := resources.Get "css/layout.css" }}
   {{ $components := resources.Get "css/components.css" }}
   {{ $blog := resources.Get "css/blog.css" }}
-  {{ $bundle := slice $vars $base $layout $components $blog | resources.Concat "css/app.css" | resources.Minify | fingerprint }}
+  {{ $features := resources.Get "css/features.css" }}
+  {{ $bundle := slice $vars $base $layout $components $blog $features | resources.Concat "css/app.css" | resources.Minify | fingerprint }}
   <link rel="stylesheet" href="{{ $bundle.RelPermalink }}" integrity="{{ $bundle.Data.Integrity }}" crossorigin="anonymous" />
+
+  {{/* Print stylesheet */}}
+  {{ $print := resources.Get "css/print.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $print.RelPermalink }}" integrity="{{ $print.Data.Integrity }}" media="print" />
+
+  {{/* Theme toggle script - load early to prevent flash */}}
+  {{ $theme := resources.Get "js/theme.js" | minify | fingerprint }}
+  <script src="{{ $theme.RelPermalink }}" integrity="{{ $theme.Data.Integrity }}"></script>
 </head>

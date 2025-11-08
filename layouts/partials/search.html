@@ -1,0 +1,15 @@
+<!-- Search component -->
+<div class="search-container">
+  <input
+    type="search"
+    id="search-input"
+    placeholder="Søk etter artikler... (Ctrl+K)"
+    aria-label="Søk"
+    autocomplete="off"
+  />
+  <div id="search-results" class="search-results"></div>
+  <div id="search-overlay" class="search-overlay"></div>
+</div>
+
+{{ $search := resources.Get "js/search.js" | minify | fingerprint }}
+<script src="{{ $search.RelPermalink }}" integrity="{{ $search.Data.Integrity }}" defer></script>

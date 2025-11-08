@@ -1,6 +1,8 @@
 baseURL = 'https://norsemen.ovh'
 languageCode = 'no'
 title = 'Norsemen Gaming'
+enableRobotsTXT = true
+enableGitInfo = true
 
 [params]
   description = 'Nyheter, guider og meninger om spill – fra en norse-gamer.'
@@ -15,3 +17,53 @@ title = 'Norsemen Gaming'
 
 [minify]
   minifyOutput = true
+
+# Image optimization settings
+[imaging]
+  quality = 85
+  resampleFilter = "lanczos"
+  [imaging.exif]
+    disableDate = false
+    disableLatLong = true
+
+# Cache settings for faster builds
+[caches]
+  [caches.getjson]
+    maxAge = "10m"
+  [caches.getcsv]
+    maxAge = "10m"
+  [caches.images]
+    maxAge = "24h"
+  [caches.assets]
+    maxAge = "24h"
+
+# Output formats (HTML + RSS + JSON for search)
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+
+# Sitemap configuration
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+# Syntax highlighting (Chroma)
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+    style = "monokai"
+    tabWidth = 2
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
