@@ -2,7 +2,9 @@
 # Norsemen Gaming - Production Dockerfile
 # ============================================
 # Stage 1: Build Hugo Site
-FROM klakegg/hugo:0.148.2-ext-alpine AS build
+# Using hugomods/hugo (actively maintained, auto-updated every 30 mins)
+# Tag 'exts' includes: Extended + Git + Node.js + Dart Sass + PostCSS + more
+FROM hugomods/hugo:exts AS build
 
 WORKDIR /src
 

@@ -101,6 +101,17 @@ openssl rand -hex 32
 
 ## Architecture
 
+### Hugo Docker Image
+
+The project uses `hugomods/hugo:exts` for building the site:
+- **Actively maintained**: Auto-updated every 30 minutes with latest Hugo
+- **Extended version**: Includes Hugo Extended for image processing
+- **Full toolchain**: Git, Node.js, Dart Sass, PostCSS, Autoprefixer, etc.
+- **Alpine-based**: Minimal size, fast builds
+- **Docker-sponsored**: No rate limiting
+
+> **Note**: The previously used `klakegg/hugo` images are discontinued. The `hugomods/hugo` project is the recommended community alternative.
+
 ### Services
 
 1. **Frontend** (Hugo + Nginx)

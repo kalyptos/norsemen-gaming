@@ -45,9 +45,10 @@ hugo new content/<page-name>.md
 ## Architecture
 
 ### Hugo Configuration
-- **Hugo version**: 0.148.2 (specified in netlify.toml)
+- **Hugo version**: Latest (auto-updated via hugomods/hugo Docker image)
+- **Netlify version**: 0.148.2 (specified in netlify.toml)
+- **Docker image**: hugomods/hugo:exts (Extended + Git + Node.js + Dart Sass + PostCSS)
 - **Requires**: Hugo Extended (for image processing with .Fit in layouts/partials/head.html)
-- **Deployment**: Netlify with automatic builds
 - **Output**: /public directory (git-ignored)
 
 ### Layout System
