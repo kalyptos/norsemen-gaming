@@ -1,11 +1,13 @@
 baseURL = 'https://norsemen.ovh'
 languageCode = 'no'
 title = 'Norsemen Gaming'
-theme = ''
 enableRobotsTXT = true
 enableGitInfo = true
-paginate = 12
 summaryLength = 30
+
+# Pagination settings (replaces deprecated 'paginate' config)
+[pagination]
+  pagerSize = 12
 
 [params]
   description = 'Nyheter, guider og meninger om spill – fra en norse-gamer.'
