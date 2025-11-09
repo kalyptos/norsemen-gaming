@@ -16,10 +16,21 @@ class GitService:
 
         if self.provider == "github":
             if settings._github_token and settings._github_repo:
-                self.github = Github(settings._github_token)
-                self.repo = self.github.get_repo(settings._github_repo)
-                self.branch = settings._github_branch
-                self.enabled = True
+                try:
+                    # Parse GitHub URL if provided (extract owner/repo)
+                    repo = self._parse_github_repo(settings._github_repo)
+
+                    self.github = Github(settings._github_token)
+                    self.repo = self.github.get_repo(repo)
+                    self.branch = settings._github_branch
+                    self.enabled = True
+                    print(f"✓ GitHub integration enabled for {repo}")
+                except GithubException as e:
+                    print(f"ERROR: Failed to connect to GitHub: {e.data.get('message', str(e))}")
+                    print("Git features disabled. Check your GIT_TOKEN and GIT_REPO.")
+                except Exception as e:
+                    print(f"ERROR: Failed to initialize GitHub: {e}")
+                    print("Git features disabled.")
             else:
                 print("WARNING: GitHub token or repo not configured. Git features disabled.")
         elif self.provider == "gitea":
@@ -33,6 +44,20 @@ class GitService:
                 print("WARNING: Gitea token or repo not configured. Git features disabled.")
         else:
             raise ValueError(f"Unsupported git provider: {self.provider}")
+
+    def _parse_github_repo(self, repo: str) -> str:
+        """Parse GitHub repo URL or return owner/repo format"""
+        # Remove .git suffix
+        repo = repo.rstrip('.git')
+
+        # If it's a URL, extract owner/repo
+        if 'github.com/' in repo:
+            parts = repo.split('github.com/')[-1].split('/')
+            if len(parts) >= 2:
+                return f"{parts[0]}/{parts[1]}"
+
+        # Return as-is if already in owner/repo format
+        return repo
 
     async def create_file(
         self,
