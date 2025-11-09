@@ -9,23 +9,15 @@ from app.config import settings
 from app.models.auth import User, UserInDB, TokenData
 
 
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+pwd_context = CryptContext(schemes=["argon2"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="api/auth/login")
-
-
-def _hash_password_safely(password: str) -> str:
-    """Hash password safely (bcrypt has 72 byte limit)"""
-    # Truncate to 72 bytes if needed (bcrypt limitation)
-    if len(password.encode('utf-8')) > 72:
-        password = password[:72]
-    return pwd_context.hash(password)
 
 
 # Fake user database (in production, use real database)
 fake_users_db = {
     settings.admin_username: {
         "username": settings.admin_username,
-        "hashed_password": _hash_password_safely(settings.admin_password),
+        "hashed_password": pwd_context.hash(settings.admin_password),
         "disabled": False,
     }
 }
@@ -33,15 +25,12 @@ fake_users_db = {
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     """Verify a password against its hash"""
-    # Truncate to 72 bytes if needed (bcrypt limitation)
-    if len(plain_password.encode('utf-8')) > 72:
-        plain_password = plain_password[:72]
     return pwd_context.verify(plain_password, hashed_password)
 
 
 def get_password_hash(password: str) -> str:
     """Hash a password"""
-    return _hash_password_safely(password)
+    return pwd_context.hash(password)
 
 
 def get_user(username: str) -> Optional[UserInDB]:
