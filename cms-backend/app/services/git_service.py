@@ -12,16 +12,25 @@ class GitService:
 
     def __init__(self):
         self.provider = settings.git_provider.lower()
+        self.enabled = False
 
         if self.provider == "github":
-            self.github = Github(settings.github_token)
-            self.repo = self.github.get_repo(settings.github_repo)
-            self.branch = settings.github_branch
+            if settings._github_token and settings._github_repo:
+                self.github = Github(settings._github_token)
+                self.repo = self.github.get_repo(settings._github_repo)
+                self.branch = settings._github_branch
+                self.enabled = True
+            else:
+                print("WARNING: GitHub token or repo not configured. Git features disabled.")
         elif self.provider == "gitea":
-            self.gitea_url = settings.gitea_url.rstrip("/")
-            self.gitea_token = settings.gitea_token
-            self.gitea_repo = settings.gitea_repo
-            self.branch = settings.gitea_branch
+            if settings._gitea_token and settings._gitea_repo:
+                self.gitea_url = settings.gitea_url.rstrip("/")
+                self.gitea_token = settings._gitea_token
+                self.gitea_repo = settings._gitea_repo
+                self.branch = settings._gitea_branch
+                self.enabled = True
+            else:
+                print("WARNING: Gitea token or repo not configured. Git features disabled.")
         else:
             raise ValueError(f"Unsupported git provider: {self.provider}")
 
@@ -34,6 +43,8 @@ class GitService:
         author_email: str = "cms@norsemen.ovh"
     ) -> Dict[str, Any]:
         """Create a new file in the repository"""
+        if not self.enabled:
+            return {"success": False, "error": "Git integration not configured"}
 
         if self.provider == "github":
             return await self._github_create_file(
@@ -53,6 +64,8 @@ class GitService:
         author_email: str = "cms@norsemen.ovh"
     ) -> Dict[str, Any]:
         """Update an existing file in the repository"""
+        if not self.enabled:
+            return {"success": False, "error": "Git integration not configured"}
 
         if self.provider == "github":
             return await self._github_update_file(
@@ -71,6 +84,8 @@ class GitService:
         author_email: str = "cms@norsemen.ovh"
     ) -> Dict[str, Any]:
         """Delete a file from the repository"""
+        if not self.enabled:
+            return {"success": False, "error": "Git integration not configured"}
 
         if self.provider == "github":
             return await self._github_delete_file(
@@ -83,6 +98,8 @@ class GitService:
 
     async def get_file_content(self, file_path: str) -> Optional[str]:
         """Get file content from repository"""
+        if not self.enabled:
+            return None
 
         if self.provider == "github":
             return await self._github_get_file(file_path)
